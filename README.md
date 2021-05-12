@@ -4,8 +4,6 @@ just another baby's-first-todo-app for the purpose of getting myself up to speed
 
 ## todo
 
-build:, chore:, ci:, docs:, style:, refactor:, perf:, test:
-
 - [x] configure prettier
 - [ ] review tsconfig.json
 - [ ] configure deployment
