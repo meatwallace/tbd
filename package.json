@@ -1,12 +1,8 @@
 {
-  "name": "react-typescript",
+  "name": "we-meet-again-world",
   "version": "1.0.0",
-  "description": "React and TypeScript example starter project",
-  "keywords": [
-    "typescript",
-    "react",
-    "starter"
-  ],
+  "description": "just another baby's-first-todo-app for the purpose of getting myself up to speed on the latest patterns & tech.",
+  "private": true,
   "main": "src/index.tsx",
   "dependencies": {
     "nanoid": "3.1.23",
@@ -33,5 +29,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "keywords": []
 }
