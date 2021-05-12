@@ -14,7 +14,8 @@
     "react-hook-form": "7.5.2",
     "react-scripts": "4.0.3",
     "tiny-invariant": "1.1.0",
-    "type-fest": "1.1.1"
+    "type-fest": "1.1.1",
+    "use-file-input": "1.0.0"
   },
   "devDependencies": {
     "@types/react": "17.0.0",

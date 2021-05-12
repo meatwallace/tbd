@@ -6,6 +6,10 @@ import { uncompleteTask } from './uncompleteTask';
 
 export function reducer(state: State, action: Action): State {
   switch (action.type) {
+    case ActionType.Import: {
+      return action.payload;
+    }
+
     case ActionType.Complete: {
       return completeTask(state, action);
     }

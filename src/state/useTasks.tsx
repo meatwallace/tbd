@@ -1,7 +1,7 @@
 import * as React from 'react';
 import invariant from 'tiny-invariant';
 import { TasksContext } from './TasksContext';
-import { ActionType } from '../types';
+import { ActionType, State } from '../types';
 
 export function useTasks() {
   const context = React.useContext(TasksContext);
@@ -19,6 +19,9 @@ export function useTasks() {
   const deleteTask = (taskID: string) =>
     dispatch({ type: ActionType.Delete, payload: { taskID } });
 
+  const importState = (state: State) =>
+    dispatch({ type: ActionType.Import, payload: state });
+
   const uncompleteTask = (taskID: string) =>
     dispatch({ type: ActionType.Uncomplete, payload: { taskID } });
 
@@ -30,6 +33,7 @@ export function useTasks() {
     completeTask,
     createTask,
     deleteTask,
+    importState,
     uncompleteTask,
   };
 }
