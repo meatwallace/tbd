@@ -1,6 +1,5 @@
 export enum TaskStatus {
   Complete = 'COMPLETE',
-  Deleted = 'DELETED',
   Pending = 'PENDING',
 }
 
