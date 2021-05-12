@@ -1,13 +1,13 @@
 export enum TaskStatus {
-  Complete = "COMPLETE",
-  Deleted = "DELETED",
-  Pending = "PENDING"
+  Complete = 'COMPLETE',
+  Deleted = 'DELETED',
+  Pending = 'PENDING',
 }
 
 export enum ActionType {
-  Complete = "COMPLETE",
-  Create = "CREATE",
-  Delete = "DELETE"
+  Complete = 'COMPLETE',
+  Create = 'CREATE',
+  Delete = 'DELETE',
 }
 
 export type CompleteAction = {

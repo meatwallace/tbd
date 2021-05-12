@@ -1,5 +1,5 @@
-import { nanoid } from "nanoid";
-import { TaskStatus, Task } from "../types";
+import { nanoid } from 'nanoid';
+import { TaskStatus, Task } from '../types';
 
 type TaskParts = {
   title: string;
@@ -12,6 +12,6 @@ export function createTask(task: TaskParts): Task {
     title: task.title,
     status: TaskStatus.Pending,
     created: new Date(),
-    updated: null
+    updated: null,
   };
 }

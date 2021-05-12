@@ -1,11 +1,11 @@
-import * as React from "react";
-import { useForm } from "react-hook-form";
-import { useTasks } from "../state/useTasks";
+import * as React from 'react';
+import { useForm } from 'react-hook-form';
+import { useTasks } from '../state/useTasks';
 
 type Props = {};
 
 enum Field {
-  Title = "title"
+  Title = 'title',
 }
 
 type FormData = {
@@ -18,7 +18,7 @@ export function CreateTaskInput(props: Props) {
 
   const onSubmit = (data: FormData) => {
     createTask(data);
-    setValue(Field.Title, "");
+    setValue(Field.Title, '');
   };
 
   return (

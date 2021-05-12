@@ -1,6 +1,6 @@
-import * as React from "react";
-import { ListItem } from "./ListItem";
-import type { Task } from "../types";
+import * as React from 'react';
+import { ListItem } from './ListItem';
+import type { Task } from '../types';
 
 type Props = Task & {};
 

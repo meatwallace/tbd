@@ -1,8 +1,8 @@
-import * as React from "react";
-import { List } from "./List";
-import { TaskListItem } from "./TaskListItem";
-import { useTasks } from "../state/useTasks";
-import type { Task } from "../types";
+import * as React from 'react';
+import { List } from './List';
+import { TaskListItem } from './TaskListItem';
+import { useTasks } from '../state/useTasks';
+import type { Task } from '../types';
 
 type Props = {};
 

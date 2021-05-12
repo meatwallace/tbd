@@ -1,12 +1,12 @@
-import * as React from "react";
-import invariant from "tiny-invariant";
-import { TasksContext } from "./TasksContext";
-import { ActionType } from "../types";
+import * as React from 'react';
+import invariant from 'tiny-invariant';
+import { TasksContext } from './TasksContext';
+import { ActionType } from '../types';
 
 export function useTasks() {
   const context = React.useContext(TasksContext);
 
-  invariant(context, "useTasks must be used within a TasksProvider");
+  invariant(context, 'useTasks must be used within a TasksProvider');
 
   const { state, dispatch } = context;
 
@@ -25,6 +25,6 @@ export function useTasks() {
     tasks,
     completeTask,
     createTask,
-    deleteTask
+    deleteTask,
   };
 }

@@ -1,4 +1,4 @@
-import { CompleteAction, State, TaskStatus } from "../types";
+import { CompleteAction, State, TaskStatus } from '../types';
 
 export function completeTask(state: State, action: CompleteAction): State {
   // TODO: tidy up
@@ -9,8 +9,8 @@ export function completeTask(state: State, action: CompleteAction): State {
       [action.payload.taskID]: {
         ...state.items[action.payload.taskID],
         status: TaskStatus.Complete,
-        updated: new Date()
-      }
-    }
+        updated: new Date(),
+      },
+    },
   };
 }

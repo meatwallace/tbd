@@ -1,7 +1,7 @@
-import * as React from "react";
-import { TasksContext } from "./TasksContext";
-import { reducer } from "./reducer";
-import { INITIAL_STATE } from "./consts";
+import * as React from 'react';
+import { TasksContext } from './TasksContext';
+import { reducer } from './reducer';
+import { INITIAL_STATE } from './consts';
 
 type Props = {
   children: React.ReactNode;

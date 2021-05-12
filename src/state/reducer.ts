@@ -1,7 +1,7 @@
-import { Action, State, ActionType } from "../types";
-import { completeTask } from "./completeTask";
-import { createTask } from "./createTask";
-import { deleteTask } from "./deleteTask";
+import { Action, State, ActionType } from '../types';
+import { completeTask } from './completeTask';
+import { createTask } from './createTask';
+import { deleteTask } from './deleteTask';
 
 export function reducer(state: State, action: Action): State {
   switch (action.type) {
@@ -18,7 +18,7 @@ export function reducer(state: State, action: Action): State {
     }
 
     default: {
-      throw new Error("Unsupported action type");
+      throw new Error('Unsupported action type');
     }
   }
 }
