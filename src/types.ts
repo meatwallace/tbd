@@ -8,6 +8,7 @@ export enum ActionType {
   Complete = 'COMPLETE',
   Create = 'CREATE',
   Delete = 'DELETE',
+  Import = ' IMPORT',
   Uncomplete = 'UNCOMPLETE',
 }
 
@@ -28,6 +29,11 @@ export type DeleteAction = {
   payload: { taskID: string };
 };
 
+export type ImportAction = {
+  type: ActionType.Import;
+  payload: State;
+};
+
 export type UncompleteAction = {
   type: ActionType.Uncomplete;
   payload: { taskID: string };
@@ -37,6 +43,7 @@ export type Action =
   | CompleteAction
   | CreateAction
   | DeleteAction
+  | ImportAction
   | UncompleteAction;
 
 export type Dispatch = (action: Action) => void;

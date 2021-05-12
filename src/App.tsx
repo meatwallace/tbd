@@ -7,6 +7,7 @@ import { TaskList } from './components/TaskList';
 import { CreateTaskInput } from './components/CreateTaskInput';
 import { Footer } from './components/Footer';
 import { ExportButton } from './components/ExportButton';
+import { ImportButton } from './components/ImportButton';
 
 export function App() {
   return (
@@ -20,6 +21,7 @@ export function App() {
         </Main>
         <Footer>
           <ExportButton />
+          <ImportButton />
         </Footer>
       </TasksProvider>
     </AppContainer>
