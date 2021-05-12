@@ -1,15 +1,20 @@
 import * as React from 'react';
 import { TasksContext } from './TasksContext';
 import { reducer } from './reducer';
-import { INITIAL_STATE } from './consts';
+import { getInitialState } from './getInitialState';
+import { persistState } from './persistState';
 
 type Props = {
   children: React.ReactNode;
 };
 
+const initialState = getInitialState();
+
 // TODO: memoize
 export function TasksProvider(props: Props) {
-  const [state, dispatch] = React.useReducer(reducer, INITIAL_STATE);
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+
+  React.useEffect(() => persistState(state), [state]);
 
   const value = { state, dispatch };
 
