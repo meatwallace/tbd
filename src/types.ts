@@ -1,12 +1,14 @@
 export enum TaskStatus {
   Complete = 'COMPLETE',
   Pending = 'PENDING',
+  Uncomplete = 'UNCOMPLETE',
 }
 
 export enum ActionType {
   Complete = 'COMPLETE',
   Create = 'CREATE',
   Delete = 'DELETE',
+  Uncomplete = 'UNCOMPLETE',
 }
 
 export type CompleteAction = {
@@ -26,7 +28,16 @@ export type DeleteAction = {
   payload: { taskID: string };
 };
 
-export type Action = CompleteAction | CreateAction | DeleteAction;
+export type UncompleteAction = {
+  type: ActionType.Uncomplete;
+  payload: { taskID: string };
+};
+
+export type Action =
+  | CompleteAction
+  | CreateAction
+  | DeleteAction
+  | UncompleteAction;
 
 export type Dispatch = (action: Action) => void;
 

@@ -13,7 +13,7 @@ export function TaskList(props: Props) {
   return (
     <List>
       {tasks.map((task: Task) => (
-        <TaskListItem key={task.id} {...task} />
+        <TaskListItem key={task.id} task={task} />
       ))}
     </List>
   );
