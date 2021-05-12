@@ -1,7 +1,5 @@
-import * as React from 'react';
-
 type Props = {
-  children: React.ReactNode;
+  children: JSX.Element;
 };
 
 export function Main(props: Props) {
