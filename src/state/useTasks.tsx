@@ -19,6 +19,9 @@ export function useTasks() {
   const deleteTask = (taskID: string) =>
     dispatch({ type: ActionType.Delete, payload: { taskID } });
 
+  const uncompleteTask = (taskID: string) =>
+    dispatch({ type: ActionType.Uncomplete, payload: { taskID } });
+
   const tasks = state.ids.map((id: string) => state.items[id]);
 
   return {
@@ -26,5 +29,6 @@ export function useTasks() {
     completeTask,
     createTask,
     deleteTask,
+    uncompleteTask,
   };
 }
