@@ -25,6 +25,7 @@ export function useTasks() {
   const tasks = state.ids.map((id: string) => state.items[id]);
 
   return {
+    state,
     tasks,
     completeTask,
     createTask,

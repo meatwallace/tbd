@@ -16,10 +16,10 @@ just another baby's-first-todo-app for the purpose of getting myself up to speed
   - [x] create
   - [x] list
   - [ ] edit
-  - [ ] complete
-  - [ ] delete
-  - [ ] client persistance
-  - [ ] export
+  - [x] complete
+  - [x] delete
+  - [x] client persistance
+  - [x] export
   - [ ] import
 - [ ] add tests
 - [ ] quick UI styling
@@ -36,8 +36,8 @@ refamiliarize myself with...
   - [ ] generics
   - [ ] library definitions
 - [ ] React
-  - [ ] context
-  - [ ] hooks
+  - [x] context
+  - [x] hooks
   - [ ] async
   - [ ] ui patterns / libs
   - [ ] styling
