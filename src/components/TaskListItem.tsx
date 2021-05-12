@@ -6,11 +6,14 @@ import { Task } from '../types';
 type Props = Task & {};
 
 export function TaskListItem(props: Props) {
-  const { deleteTask } = useTasks();
+  const { completeTask, deleteTask } = useTasks();
 
   return (
     <ListItem>
-      <span>{props.title}</span>
+      <p>
+        <span>{props.title}</span> - <span>{props.status}</span>
+      </p>
+      <button onClick={() => completeTask(props.id)}>complete</button>
       <button onClick={() => deleteTask(props.id)}>delete</button>
     </ListItem>
   );
