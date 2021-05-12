@@ -1,15 +1,16 @@
 # we meet again, world
 
+![Github Actions CI workflow status](https://github.com/meatwallace/we-meet-again-world/actions/workflows/ci.yml/badge.svg?branch=main)
+
 just another baby's-first-todo-app for the purpose of getting myself up to speed on the latest patterns & tech. it's been a hot minute, to say the least.
 
 ## todo
 
-build:, chore:, ci:, docs:, style:, refactor:, perf:, test:
-
 - [x] configure prettier
+- [x] tidy up package.json
+- [x] configure deployment
+- [x] configure ci/cd
 - [ ] review tsconfig.json
-- [ ] configure deployment
-- [ ] configure ci/cd
 - [ ] configure testing
 - [ ] core todo list functionality
   - [x] create
@@ -22,7 +23,6 @@ build:, chore:, ci:, docs:, style:, refactor:, perf:, test:
   - [ ] import
 - [ ] add tests
 - [ ] quick UI styling
-- [ ] tidy up package.json
 - [ ] refactor state to use Immer
 
 ## goals
