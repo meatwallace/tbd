@@ -4,18 +4,23 @@ just another baby's-first-todo-app for the purpose of getting myself up to speed
 
 ## todo
 
+- [ ] configure prettier
+- [ ] review tsconfig.json
+- [ ] configure deployment
+- [ ] configure ci/cd
+- [ ] configure testing
 - [ ] core todo list functionality
-  - [ ] create
-  - [ ] list
+  - [x] create
+  - [x] list
   - [ ] edit
   - [ ] complete
   - [ ] delete
   - [ ] client persistance
   - [ ] export
   - [ ] import
+- [ ] add tests
 - [ ] quick UI styling
 - [ ] tidy up package.json
-- [ ] configure deployment
 - [ ] refactor state to use Immer
 
 ## goals
