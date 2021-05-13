@@ -21,7 +21,7 @@ it("can be passed an object that will be used to set the task's properties", () 
     title: 'A very specific task title',
     created: new Date(),
     updated: new Date(),
-    status: TaskStatus.Complete,
+    status: TaskStatus.Completed,
   };
 
   const result = createTask(task);

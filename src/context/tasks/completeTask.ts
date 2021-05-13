@@ -8,7 +8,7 @@ export function completeTask(state: State, action: CompleteAction): State {
       ...state.items,
       [action.payload.taskID]: {
         ...state.items[action.payload.taskID],
-        status: TaskStatus.Complete,
+        status: TaskStatus.Completed,
         updated: new Date(),
       },
     },
