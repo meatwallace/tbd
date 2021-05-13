@@ -1,6 +1,6 @@
 import * as React from 'react';
 import useFileInput from 'use-file-input';
-import { useTasks } from '../state/useTasks';
+import { useTasks } from '../hooks/useTasks';
 
 export function ImportButton() {
   const { importState } = useTasks();

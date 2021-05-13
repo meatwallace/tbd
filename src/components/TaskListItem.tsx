@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ListItem } from './ListItem';
-import { useTasks } from '../state/useTasks';
+import { useTasks } from '../hooks/useTasks';
 import { Task } from '../types';
 import { isTaskComplete } from '../utils/isTaskComplete';
 import { isTaskPending } from '../utils/isTaskPending';
@@ -8,6 +8,7 @@ import { isTaskPending } from '../utils/isTaskPending';
 type Props = { task: Task };
 
 export function TaskListItem(props: Props) {
+  // TODO: review performance implication of including the hook in every list item
   const { completeTask, deleteTask, uncompleteTask } = useTasks();
 
   return (

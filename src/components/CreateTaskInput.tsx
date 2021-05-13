@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
-import { useTasks } from '../state/useTasks';
+import { useTasks } from '../hooks/useTasks';
 
 type Props = {};
 
