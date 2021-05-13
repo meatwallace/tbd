@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { AppContainer } from './components/AppContainer';
+import { CreateTaskInput } from './components/CreateTaskInput';
+import { ExportButton } from './components/ExportButton';
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import { ImportButton } from './components/ImportButton';
 import { Main } from './components/Main';
+import { TaskList } from './components/TaskList';
+import { TasksFilters } from './components/TasksFilters';
 import { TasksProvider } from './context/tasks';
 import { TasksFilterProvider } from './context/tasksFilter';
-import { TaskList } from './components/TaskList';
-import { CreateTaskInput } from './components/CreateTaskInput';
-import { Footer } from './components/Footer';
-import { ExportButton } from './components/ExportButton';
-import { ImportButton } from './components/ImportButton';
 
 export function App() {
   return (
@@ -17,6 +18,7 @@ export function App() {
         <TasksFilterProvider>
           <Header>
             <CreateTaskInput />
+            <TasksFilters />
           </Header>
           <Main>
             <TaskList />
