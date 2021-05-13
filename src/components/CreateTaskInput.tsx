@@ -24,11 +24,11 @@ export function CreateTaskInput(props: Props) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <input
-        defaultValue="Example task title"
+        placeholder="Task name"
         {...register(Field.Title, { required: true })}
       />
 
-      <input type="submit" />
+      <button type="submit">Add task</button>
     </form>
   );
 }

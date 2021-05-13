@@ -7,3 +7,4 @@ if (global.expect === undefined && self.expect) {
 }
 
 require('jest-extended');
+require('@testing-library/jest-dom');
