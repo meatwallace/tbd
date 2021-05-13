@@ -1,18 +1,23 @@
 import * as React from 'react';
 import { List } from './List';
 import { TaskListItem } from './TaskListItem';
-import { useTasks } from '../state/useTasks';
+import { filterTasksByStatus } from './utils/filterTasksByStatus';
+import { useTasks } from '../hooks/useTasks';
+import { useTasksFilter } from '../hooks/useTasksFilter';
 import { Task } from '../types';
 
 type Props = {};
 
 export function TaskList(props: Props) {
-  // TODO: review performance implication of including the hook in every list item
   const { tasks } = useTasks();
+  const { filter } = useTasksFilter();
+
+  // TODO: memoize
+  const filteredTasks = filterTasksByStatus(tasks, filter.status);
 
   return (
     <List>
-      {tasks.map((task: Task) => (
+      {filteredTasks.map((task: Task) => (
         <TaskListItem key={task.id} task={task} />
       ))}
     </List>
