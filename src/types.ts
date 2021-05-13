@@ -1,5 +1,5 @@
 export enum TaskStatus {
-  Complete = 'COMPLETE',
+  Completed = 'COMPLETED',
   Pending = 'PENDING',
 }
 
@@ -62,6 +62,6 @@ export type Task = {
 
 export enum StatusFilter {
   All,
-  Complete,
+  Completed,
   Pending,
 }

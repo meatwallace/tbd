@@ -5,10 +5,10 @@ import { createTask } from '../../test-utils/createTask';
 it('removes all tasks that do not have a status of "pending"', () => {
   const data = [
     createTask({ status: TaskStatus.Pending }),
-    createTask({ status: TaskStatus.Complete }),
+    createTask({ status: TaskStatus.Completed }),
     createTask({ status: TaskStatus.Pending }),
-    createTask({ status: TaskStatus.Complete }),
-    createTask({ status: TaskStatus.Complete }),
+    createTask({ status: TaskStatus.Completed }),
+    createTask({ status: TaskStatus.Completed }),
     createTask({ status: TaskStatus.Pending }),
   ];
 

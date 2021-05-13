@@ -22,10 +22,10 @@ export function TasksFilters() {
       </button>
 
       <button
-        disabled={filter.status === StatusFilter.Complete}
-        onClick={() => setStatusFilter(StatusFilter.Complete)}
+        disabled={filter.status === StatusFilter.Completed}
+        onClick={() => setStatusFilter(StatusFilter.Completed)}
       >
-        complete
+        completed
       </button>
     </div>
   );

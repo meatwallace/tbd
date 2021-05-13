@@ -4,10 +4,10 @@ import { createTask } from '../../test-utils/createTask';
 
 const data = [
   createTask({ status: TaskStatus.Pending }),
-  createTask({ status: TaskStatus.Complete }),
+  createTask({ status: TaskStatus.Completed }),
   createTask({ status: TaskStatus.Pending }),
-  createTask({ status: TaskStatus.Complete }),
-  createTask({ status: TaskStatus.Complete }),
+  createTask({ status: TaskStatus.Completed }),
+  createTask({ status: TaskStatus.Completed }),
   createTask({ status: TaskStatus.Pending }),
 ];
 
@@ -19,10 +19,10 @@ it('returns all provided tasks when the filter is set to "all"', () => {
   expect(tasks).toEqual(data);
 });
 
-it('returns only completed tasks when the filter is set to "complete"', () => {
-  const tasks = filterTasksByStatus(data, StatusFilter.Complete);
+it('returns only completed tasks when the filter is set to "completed"', () => {
+  const tasks = filterTasksByStatus(data, StatusFilter.Completed);
 
-  const result = tasks.every((task) => task.status === TaskStatus.Complete);
+  const result = tasks.every((task) => task.status === TaskStatus.Completed);
 
   expect.assertions(1);
 
