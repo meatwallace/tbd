@@ -1,6 +1,7 @@
 import * as React from 'react';
 import invariant from 'tiny-invariant';
-import { TasksContext } from './TasksContext';
+import { TasksContext } from '../context/tasks';
+import { getTasksFromState } from './utils/getTasksFromState';
 import { ActionType, State } from '../types';
 
 export function useTasks() {
@@ -25,7 +26,7 @@ export function useTasks() {
   const uncompleteTask = (taskID: string) =>
     dispatch({ type: ActionType.Uncomplete, payload: { taskID } });
 
-  const tasks = state.ids.map((id: string) => state.items[id]);
+  const tasks = getTasksFromState(state);
 
   return {
     state,

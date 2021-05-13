@@ -1,4 +1,4 @@
-import { State, TaskStatus, UncompleteAction } from '../types';
+import { State, TaskStatus, UncompleteAction } from '../../types';
 
 export function uncompleteTask(state: State, action: UncompleteAction): State {
   // TODO: tidy up

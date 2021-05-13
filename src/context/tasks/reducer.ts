@@ -1,8 +1,8 @@
-import { Action, State, ActionType } from '../types';
 import { completeTask } from './completeTask';
 import { createTask } from './createTask';
 import { deleteTask } from './deleteTask';
 import { uncompleteTask } from './uncompleteTask';
+import { Action, State, ActionType } from '../../types';
 
 export function reducer(state: State, action: Action): State {
   switch (action.type) {
