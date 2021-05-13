@@ -14,9 +14,7 @@ it('removes all tasks that do not have a status of "complete"', () => {
 
   const tasks = filterCompleteTasks(data);
 
-  const result = tasks.every((task) => task.status === TaskStatus.Complete);
-
   expect.assertions(1);
 
-  expect(result).toEqual(true);
+  expect(tasks).toSatisfyAll((task) => task.status === TaskStatus.Complete);
 });
