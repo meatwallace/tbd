@@ -1,7 +1,6 @@
 export enum TaskStatus {
   Complete = 'COMPLETE',
   Pending = 'PENDING',
-  Uncomplete = 'UNCOMPLETE',
 }
 
 export enum ActionType {
@@ -60,3 +59,9 @@ export type Task = {
   created: Date;
   updated: Date | null;
 };
+
+export enum StatusFilter {
+  All,
+  Complete,
+  Pending,
+}
