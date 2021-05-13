@@ -1,6 +1,6 @@
 import { Task, StatusFilter } from '../../types';
 import { filterPendingTasks } from './filterPendingTasks';
-import { filterCompleteTasks } from './filterCompleteTasks';
+import { filterCompletedTasks } from './filterCompletedTasks';
 
 export function filterTasksByStatus(
   tasks: Array<Task>,
@@ -10,8 +10,8 @@ export function filterTasksByStatus(
     return tasks;
   }
 
-  if (statusFilter === StatusFilter.Complete) {
-    return filterCompleteTasks(tasks);
+  if (statusFilter === StatusFilter.Completed) {
+    return filterCompletedTasks(tasks);
   }
 
   if (statusFilter === StatusFilter.Pending) {
