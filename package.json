@@ -7,6 +7,7 @@
   "dependencies": {
     "@types/file-saver": "2.0.2",
     "file-saver": "2.0.5",
+    "jest-extended": "0.11.5",
     "local-storage": "2.0.0",
     "nanoid": "3.1.23",
     "react": "17.0.2",
@@ -25,19 +26,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom -- --config=jest.config.js",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "keywords": [],
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.ts"
-    ]
-  }
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
+  "keywords": []
 }
