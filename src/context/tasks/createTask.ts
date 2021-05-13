@@ -1,8 +1,14 @@
-import { CreateAction, State } from '../../types';
-import { createTask as createTaskObject } from '../../utils/createTask';
+import { nanoid } from 'nanoid';
+import { CreateAction, State, TaskStatus } from '../../types';
 
 export function createTask(state: State, action: CreateAction): State {
-  const task = createTaskObject({ title: action.payload.title });
+  const task = {
+    id: nanoid(),
+    title: action.payload.title,
+    status: TaskStatus.Pending,
+    created: new Date(),
+    updated: null,
+  };
 
   return {
     ids: [...state.ids, task.id],
