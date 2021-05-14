@@ -7,7 +7,7 @@ type Props = {
 
 const styles = {
   container: {
-    flex: '1 0 100%',
+    flex: '1 1 100%',
     paddingBottom: 2,
     paddingLeft: 2,
     paddingRight: 2,
