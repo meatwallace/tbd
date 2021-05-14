@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Button } from 'theme-ui';
 import useFileInput from 'use-file-input';
 import { useTasks } from '../hooks/useTasks';
 
@@ -20,5 +21,5 @@ export function ImportButton() {
     { accept: 'application/JSON', multiple: false },
   );
 
-  return <button onClick={handleFileSelect}>import</button>;
+  return <Button onClick={handleFileSelect}>Import</Button>;
 }

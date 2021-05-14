@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { AppContainer } from './components/AppContainer';
+import { ThemeProvider } from 'theme-ui';
+import { theme } from './theme';
 import { CreateTaskInput } from './components/CreateTaskInput';
 import { ExportButton } from './components/ExportButton';
 import { Footer } from './components/Footer';
@@ -13,7 +14,7 @@ import { TasksFilterProvider } from './context/tasksFilter';
 
 export function App() {
   return (
-    <AppContainer>
+    <ThemeProvider theme={theme}>
       <TasksProvider>
         <TasksFilterProvider>
           <Header>
@@ -29,6 +30,6 @@ export function App() {
           </Footer>
         </TasksFilterProvider>
       </TasksProvider>
-    </AppContainer>
+    </ThemeProvider>
   );
 }
