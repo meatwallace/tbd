@@ -2,19 +2,50 @@ import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { App } from './App';
 
-it('adds a pending task to the list when a new task is created', async () => {
+function setupTest() {
   render(<App />);
 
-  const createTaskInput = screen.getByPlaceholderText('Task name');
-  const addTaskButton = screen.getByText('Add task');
+  const newTaskInput = screen.getByPlaceholderText('Task name');
+  const addTaskButton = screen.getByRole('button', { name: /add task/i });
 
-  userEvent.type(createTaskInput, 'A brand new task');
+  const elements = { newTaskInput, addTaskButton };
 
-  await act(async () => userEvent.click(addTaskButton));
+  const createTask = async (title: string) => {
+    userEvent.type(newTaskInput, title);
+
+    await act(async () => userEvent.click(addTaskButton));
+  };
+
+  const utils = { createTask };
+
+  return { elements, utils };
+}
+
+it('adds a pending task to the list when a new task is created', async () => {
+  const { utils } = setupTest();
+
+  await utils.createTask('A brand new task');
 
   const newTask = screen.getByText('A brand new task');
 
   expect(newTask).toBeInTheDocument();
+});
+
+it('displays tasks sorted by newest first', async () => {
+  const { utils } = setupTest();
+
+  await utils.createTask('Test task #1');
+  await utils.createTask('Test task #2');
+  await utils.createTask('Test task #3');
+
+  const tasks = screen.getAllByText(/Test task #[1-3]/);
+
+  expect.assertions(4);
+
+  expect(tasks).toHaveLength(3);
+  expect(tasks[0]).toHaveTextContent('Test task #3');
+  expect(tasks[1]).toHaveTextContent('Test task #2');
+  expect(tasks[2]).toHaveTextContent('Test task #1');
 });
 
 it.skip('only shows pending tasks by default', () => {

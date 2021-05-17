@@ -15,9 +15,12 @@ export function TaskList(props: Props) {
   // TODO: memoize
   const filteredTasks = filterTasksByStatus(tasks, filter.status);
 
+  // reverse the sort order so that our newest tasks show first
+  const sortedTasks = filteredTasks.reverse();
+
   return (
     <List>
-      {filteredTasks.map((task: Task) => (
+      {sortedTasks.map((task: Task) => (
         <TaskListItem key={task.id} task={task} />
       ))}
     </List>
