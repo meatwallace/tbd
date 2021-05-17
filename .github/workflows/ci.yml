@@ -21,10 +21,10 @@ jobs:
           node-version: 15
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install --immutable --immutable-cache
 
       - name: Run tests
-        run: npm test
+        run: yarn test
 
       - name: Run build
-        run: npm run build
+        run: yarn run build
