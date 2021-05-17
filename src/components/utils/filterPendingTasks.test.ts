@@ -12,11 +12,9 @@ it('removes all tasks that do not have a status of "pending"', () => {
     createTask({ status: TaskStatus.Pending }),
   ];
 
-  const tasks = filterPendingTasks(data);
-
-  const result = tasks.every((task) => task.status === TaskStatus.Pending);
+  const result = filterPendingTasks(data);
 
   expect.assertions(1);
 
-  expect(result).toEqual(true);
+  expect(result).toSatisfyAll((task) => task.status === TaskStatus.Pending);
 });
