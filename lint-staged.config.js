@@ -1,6 +1,6 @@
 module.exports = {
-  '**/*.ts?(x)': () => 'yarn tsc -p tsconfig.json --noEmit',
-  '*.{ts,tsx}': 'yarn test --bail --findRelatedTests',
-  '*.{js,ts,tsx}': 'yarn eslint --cache --fix',
-  '*.{js,ts,tsx,css,md}': 'yarn prettier --write',
+  '**/*.ts?(x)': () => 'yarn tsc --noEmit',
+  '*.{ts,tsx}': 'yarn test --watchAll=false --bail --findRelatedTests',
+  '*.{js,ts,tsx}': ['yarn prettier --write', 'yarn eslint --cache --fix'],
+  '*.{css,md}': 'yarn prettier --write',
 };
