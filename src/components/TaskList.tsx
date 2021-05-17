@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { CreateTaskInput } from './CreateTaskInput';
 import { List } from './List';
 import { TaskListItem } from './TaskListItem';
 import { filterTasksByStatus } from './utils/filterTasksByStatus';
@@ -19,10 +20,13 @@ export function TaskList(props: Props) {
   const sortedTasks = filteredTasks.reverse();
 
   return (
-    <List>
-      {sortedTasks.map((task: Task) => (
-        <TaskListItem key={task.id} task={task} />
-      ))}
-    </List>
+    <React.Fragment>
+      <CreateTaskInput />
+      <List>
+        {sortedTasks.map((task: Task) => (
+          <TaskListItem key={task.id} task={task} />
+        ))}
+      </List>
+    </React.Fragment>
   );
 }
