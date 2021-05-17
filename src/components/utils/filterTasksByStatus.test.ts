@@ -20,21 +20,17 @@ it('returns all provided tasks when the filter is set to "all"', () => {
 });
 
 it('returns only completed tasks when the filter is set to "completed"', () => {
-  const tasks = filterTasksByStatus(data, StatusFilter.Completed);
-
-  const result = tasks.every((task) => task.status === TaskStatus.Completed);
+  const result = filterTasksByStatus(data, StatusFilter.Completed);
 
   expect.assertions(1);
 
-  expect(result).toEqual(true);
+  expect(result).toSatisfyAll((task) => task.status === TaskStatus.Completed);
 });
 
 it('returns only pending tasks when the filter is set to "pending"', () => {
-  const tasks = filterTasksByStatus(data, StatusFilter.Pending);
-
-  const result = tasks.every((task) => task.status === TaskStatus.Pending);
+  const result = filterTasksByStatus(data, StatusFilter.Pending);
 
   expect.assertions(1);
 
-  expect(result).toEqual(true);
+  expect(result).toSatisfyAll((task) => task.status === TaskStatus.Pending);
 });
