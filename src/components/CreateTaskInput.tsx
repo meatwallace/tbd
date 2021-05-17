@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button, Flex, Input } from 'theme-ui';
 import { useForm } from 'react-hook-form';
 import { useTasks } from '../hooks/useTasks';

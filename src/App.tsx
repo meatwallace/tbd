@@ -1,6 +1,5 @@
 import { ThemeProvider } from 'theme-ui';
 import { theme } from './theme';
-import { CreateTaskInput } from './components/CreateTaskInput';
 import { ExportButton } from './components/ExportButton';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
@@ -19,7 +18,6 @@ export function App() {
         <TasksFilterProvider>
           <Layout>
             <Header>
-              <CreateTaskInput />
               <TasksFilters />
             </Header>
             <Main>
