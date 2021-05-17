@@ -1,16 +1,20 @@
-// import { render, fireEvent } from '@testing-library/react';
-// import { App } from './App';
+import { act, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { App } from './App';
 
-// TODO: write react tests when local dev environment is useable. CodeSandbox's
-// Jest integration is...poor, to say the least.
-// https://github.com/codesandbox/codesandbox-client/issues/513
-it.skip('adds a pending task to the list when a new task is created', () => {
-  // const { getByText, getByPlaceholderText } = render(<App />);
-  // fireEvent.change(getByPlaceholderText('New task'), {
-  //   target: { value: 'A brand new task' },
-  // });
-  // fireEvent.click(getByText('Submit'));
-  // expect(getByText('A brand new task')).toBeInTheDocument();
+it('adds a pending task to the list when a new task is created', async () => {
+  render(<App />);
+
+  const createTaskInput = screen.getByPlaceholderText('Task name');
+  const addTaskButton = screen.getByText('Add task');
+
+  userEvent.type(createTaskInput, 'A brand new task');
+
+  await act(async () => userEvent.click(addTaskButton));
+
+  const newTask = screen.getByText('A brand new task');
+
+  expect(newTask).toBeInTheDocument();
 });
 
 it.skip('only shows pending tasks by default', () => {
