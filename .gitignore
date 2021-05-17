@@ -17,3 +17,6 @@ build/
 
 # editor specific files
 .idea
+
+# tooling
+.eslintcache
