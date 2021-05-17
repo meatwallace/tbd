@@ -37,13 +37,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@testing-library/dom", "npm:7.31.0"],
             ["@testing-library/jest-dom", "npm:5.12.0"],
             ["@testing-library/react", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:11.2.7"],
+            ["@testing-library/user-event", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:13.1.9"],
             ["@theme-ui/css", "npm:0.8.4"],
             ["@types/file-saver", "npm:2.0.2"],
             ["@types/jest", "npm:26.0.23"],
             ["@types/react", "npm:17.0.0"],
             ["@types/react-dom", "npm:17.0.0"],
+            ["@types/testing-library__jest-dom", "npm:5.9.5"],
             ["@typescript-eslint/eslint-plugin", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:4.23.0"],
             ["@typescript-eslint/parser", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:4.23.0"],
             ["@yarnpkg/pnpify", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:3.0.0-rc.3"],
@@ -5381,6 +5384,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react",
             "react-dom",
             "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@testing-library/user-event", [
+        ["npm:13.1.9", {
+          "packageLocation": "./.yarn/cache/@testing-library-user-event-npm-13.1.9-52402725e6-c1430ef9eb.zip/node_modules/@testing-library/user-event/",
+          "packageDependencies": [
+            ["@testing-library/user-event", "npm:13.1.9"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:13.1.9", {
+          "packageLocation": "./.yarn/$$virtual/@testing-library-user-event-virtual-ba6098871f/0/cache/@testing-library-user-event-npm-13.1.9-52402725e6-c1430ef9eb.zip/node_modules/@testing-library/user-event/",
+          "packageDependencies": [
+            ["@testing-library/user-event", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:13.1.9"],
+            ["@babel/runtime", "npm:7.14.0"],
+            ["@testing-library/dom", "npm:7.31.0"],
+            ["@types/testing-library__dom", null]
+          ],
+          "packagePeers": [
+            "@testing-library/dom",
+            "@types/testing-library__dom"
           ],
           "linkType": "HARD",
         }]
@@ -21495,13 +21521,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["we-meet-again-world", "workspace:."],
+            ["@testing-library/dom", "npm:7.31.0"],
             ["@testing-library/jest-dom", "npm:5.12.0"],
             ["@testing-library/react", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:11.2.7"],
+            ["@testing-library/user-event", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:13.1.9"],
             ["@theme-ui/css", "npm:0.8.4"],
             ["@types/file-saver", "npm:2.0.2"],
             ["@types/jest", "npm:26.0.23"],
             ["@types/react", "npm:17.0.0"],
             ["@types/react-dom", "npm:17.0.0"],
+            ["@types/testing-library__jest-dom", "npm:5.9.5"],
             ["@typescript-eslint/eslint-plugin", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:4.23.0"],
             ["@typescript-eslint/parser", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:4.23.0"],
             ["@yarnpkg/pnpify", "virtual:afc1af8ae29817423a90b1c80689da6574188daec2b08ffe8f18121a1c4c623a885a13ae5210b6dc9c3d6f8c05e484005c6312f5be2b6c9d5afea410256ff1ef#npm:3.0.0-rc.3"],

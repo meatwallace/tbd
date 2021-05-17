@@ -2590,7 +2590,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/dom@npm:^7.28.1":
+"@testing-library/dom@npm:7.31.0, @testing-library/dom@npm:^7.28.1":
   version: 7.31.0
   resolution: "@testing-library/dom@npm:7.31.0"
   dependencies:
@@ -2632,6 +2632,17 @@ __metadata:
     react: "*"
     react-dom: "*"
   checksum: 389c9f3e83f59677f5283783788d18f8cd499342a0e5c1f67821c292860afe5f282ff8b5ced795b9c2f7d78132005d8b6b33e1b3e3a9004e240e3569f8e168ef
+  languageName: node
+  linkType: hard
+
+"@testing-library/user-event@npm:13.1.9":
+  version: 13.1.9
+  resolution: "@testing-library/user-event@npm:13.1.9"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+  peerDependencies:
+    "@testing-library/dom": ">=7.21.4"
+  checksum: c1430ef9eba6e5e5bb733c72700e0dc54993bbd6fd0481b3cb46b22f6b9c3a0b5306615b0cb718bab8f11b3fe0e5c911cd7253166646697410ed32fa527a7967
   languageName: node
   linkType: hard
 
@@ -3100,7 +3111,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/testing-library__jest-dom@npm:^5.9.1":
+"@types/testing-library__jest-dom@npm:5.9.5, @types/testing-library__jest-dom@npm:^5.9.1":
   version: 5.9.5
   resolution: "@types/testing-library__jest-dom@npm:5.9.5"
   dependencies:
@@ -16459,13 +16470,16 @@ typescript@4.2.4:
   version: 0.0.0-use.local
   resolution: "we-meet-again-world@workspace:."
   dependencies:
+    "@testing-library/dom": 7.31.0
     "@testing-library/jest-dom": 5.12.0
     "@testing-library/react": 11.2.7
+    "@testing-library/user-event": 13.1.9
     "@theme-ui/css": 0.8.4
     "@types/file-saver": 2.0.2
     "@types/jest": 26.0.23
     "@types/react": 17.0.0
     "@types/react-dom": 17.0.0
+    "@types/testing-library__jest-dom": 5.9.5
     "@typescript-eslint/eslint-plugin": 4.23.0
     "@typescript-eslint/parser": 4.23.0
     "@yarnpkg/pnpify": 3.0.0-rc.3
