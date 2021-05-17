@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from './theme';
 import { CreateTaskInput } from './components/CreateTaskInput';
