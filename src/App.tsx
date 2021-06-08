@@ -7,7 +7,7 @@ import { ImportButton } from './components/ImportButton';
 import { Layout } from './components/Layout';
 import { Main } from './components/Main';
 import { TaskList } from './components/TaskList';
-import { TasksFilters } from './components/TasksFilters';
+import { ToggleCompletedTasksFilterButton } from './components/ToggleCompletedTasksFilterButton';
 import { TasksProvider } from './context/tasks';
 import { TasksFilterProvider } from './context/tasksFilter';
 
@@ -18,7 +18,7 @@ export function App() {
         <TasksFilterProvider>
           <Layout>
             <Header>
-              <TasksFilters />
+              <ToggleCompletedTasksFilterButton />
             </Header>
             <Main>
               <TaskList />
