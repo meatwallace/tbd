@@ -1,60 +1,93 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, getByRole, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import invariant from 'tiny-invariant';
 import { App } from './App';
 
+// --- SETUP & TEARDOWN
 function setupTest() {
   render(<App />);
+}
 
+// --- UTILS
+// NOTE: these utilities *ARE* test code themselves. do *NOT* mindlessly change
+// these to fix broken tests. these must reflect our desired behaviour, and
+// exist simply to make our tests concise.
+async function createTask(title: string) {
   const newTaskInput = screen.getByPlaceholderText('Task name');
   const addTaskButton = screen.getByRole('button', { name: /^add task$/i });
 
-  const viewAllTasksButton = screen.getByRole('button', {
-    name: /^all$/i,
-  });
+  userEvent.type(newTaskInput, title);
 
-  const viewCompletedTasksButton = screen.getByRole('button', {
-    name: /^completed$/i,
-  });
-
-  const viewPendingTasksButton = screen.getByRole('button', {
-    name: /^pending$/i,
-  });
-
-  const elements = {
-    addTaskButton,
-    newTaskInput,
-    viewAllTasksButton,
-    viewCompletedTasksButton,
-    viewPendingTasksButton,
-  };
-
-  const createTask = async (title: string) => {
-    userEvent.type(newTaskInput, title);
-
-    await act(async () => userEvent.click(addTaskButton));
-  };
-
-  const utils = { createTask };
-
-  return { elements, utils };
+  await act(async () => userEvent.click(addTaskButton));
 }
 
+async function completeTask(title: string) {
+  const task = screen.getByText(title).closest('li');
+
+  invariant(task);
+
+  const complete = getByRole(task, 'button', {
+    name: /^complete$/i,
+  });
+
+  await act(async () => userEvent.click(complete));
+}
+
+async function uncompleteTask(title: string) {
+  const task = screen.getByText(title).closest('li');
+
+  invariant(task);
+
+  const uncomplete = getByRole(task, 'button', {
+    name: /^uncomplete$/i,
+  });
+
+  await act(async () => userEvent.click(uncomplete));
+}
+
+async function deleteTask(title: string) {
+  const task = screen.getByText(title).closest('li');
+
+  invariant(task);
+
+  const deleteButton = getByRole(task, 'button', {
+    name: /^delete/i,
+  });
+
+  await act(async () => userEvent.click(deleteButton));
+}
+
+async function showCompletedTasks() {
+  const showCompletedTasksButton = screen.getByRole('button', {
+    name: /^show completed tasks$/i,
+  });
+
+  await act(async () => userEvent.click(showCompletedTasksButton));
+}
+
+async function hideCompletedTasks() {
+  const hideCompletedTasksButton = screen.getByRole('button', {
+    name: /^hide completed tasks$/i,
+  });
+
+  await act(async () => userEvent.click(hideCompletedTasksButton));
+}
+
+// --- TESTS
 it('adds a pending task to the list when a new task is created', async () => {
-  const { utils } = setupTest();
+  setupTest();
 
-  await utils.createTask('A brand new task');
+  await createTask('A test task');
 
-  const newTask = screen.getByText('A brand new task');
-
-  expect(newTask).toBeInTheDocument();
+  expect(screen.queryByText('A test task')).toBeInTheDocument();
 });
 
 it('displays tasks sorted by newest first', async () => {
-  const { utils } = setupTest();
+  setupTest();
 
-  await utils.createTask('Test task #1');
-  await utils.createTask('Test task #2');
-  await utils.createTask('Test task #3');
+  await createTask('Test task #1');
+  await createTask('Test task #2');
+  await createTask('Test task #3');
 
   const tasks = screen.getAllByText(/Test task #[1-3]/);
 
@@ -67,154 +100,89 @@ it('displays tasks sorted by newest first', async () => {
 });
 
 it('only shows pending tasks by default', async () => {
-  const { utils } = setupTest();
+  setupTest();
 
-  await utils.createTask('Completed task');
-
-  const completeTaskButton = screen.getByRole('button', {
-    name: /^complete$/i,
-  });
-
-  const completedTask = screen.getByText('Completed task');
-
-  await act(async () => userEvent.click(completeTaskButton));
-
-  await utils.createTask('Pending task');
-
-  const pendingTask = screen.getByText('Pending task');
+  await createTask('Pending task');
+  await createTask('Completed task');
+  await completeTask('Completed task');
 
   expect.assertions(2);
 
-  expect(completedTask).not.toBeInTheDocument();
-  expect(pendingTask).toBeInTheDocument();
+  expect(screen.queryByText('Pending task')).toBeInTheDocument();
+  expect(screen.queryByText('Completed task')).not.toBeInTheDocument();
 });
 
-it("only shows completed tasks when the status filter is set to 'completed'", async () => {
-  const { elements, utils } = setupTest();
+it("shows completed tasks when 'show completed tasks' is pressed", async () => {
+  setupTest();
 
-  await utils.createTask('Completed task');
-
-  const completeTaskButton = screen.getByRole('button', {
-    name: /^complete$/i,
-  });
-
-  await act(async () => userEvent.click(completeTaskButton));
-
-  await utils.createTask('Pending task');
-
-  const pendingTask = screen.getByText('Pending task');
-
-  await act(async () => userEvent.click(elements.viewCompletedTasksButton));
-
-  const completedTask = screen.getByText('Completed task');
+  await createTask('Pending task');
+  await createTask('Completed task');
+  await completeTask('Completed task');
+  await showCompletedTasks();
 
   expect.assertions(2);
 
-  expect(completedTask).toBeInTheDocument();
-  expect(pendingTask).not.toBeInTheDocument();
+  expect(screen.queryByText('Pending task')).toBeInTheDocument();
+  expect(screen.queryByText('Completed task')).toBeInTheDocument();
 });
 
-it("only shows pending tasks when the status filter is set to 'pending'", async () => {
-  const { elements, utils } = setupTest();
+it("replaces the 'show completed tasks' button with a 'hide completed tasks' button when pressed", async () => {
+  setupTest();
 
-  await utils.createTask('Completed task');
-
-  const completeTaskButton = screen.getByRole('button', {
-    name: /^complete$/i,
-  });
-
-  await act(async () => userEvent.click(completeTaskButton));
-
-  await utils.createTask('Pending task');
-
-  await act(async () => userEvent.click(elements.viewCompletedTasksButton));
-
-  const completedTask = screen.getByText('Completed task');
-
-  await act(async () => userEvent.click(elements.viewPendingTasksButton));
-
-  const pendingTask = screen.getByText('Pending task');
+  await showCompletedTasks();
 
   expect.assertions(2);
 
-  expect(completedTask).not.toBeInTheDocument();
-  expect(pendingTask).toBeInTheDocument();
+  expect(
+    screen.queryByRole('button', { name: /^show completed tasks$/i }),
+  ).not.toBeInTheDocument();
+
+  expect(
+    screen.queryByRole('button', { name: /^hide completed tasks$/i }),
+  ).toBeInTheDocument();
 });
 
-it("shows all tasks when the status filter is set to 'all'", async () => {
-  const { elements, utils } = setupTest();
+it("hides completed tasks when 'hide completed tasks' is pressed", async () => {
+  setupTest();
 
-  await utils.createTask('Completed task');
-
-  const completeTaskButton = screen.getByRole('button', {
-    name: /^complete$/i,
-  });
-
-  await act(async () => userEvent.click(completeTaskButton));
-
-  await utils.createTask('Pending task');
-
-  await act(async () => userEvent.click(elements.viewAllTasksButton));
-
-  const completedTask = screen.getByText('Completed task');
-  const pendingTask = screen.getByText('Pending task');
+  await createTask('Pending task');
+  await createTask('Completed task');
+  await completeTask('Completed task');
+  await showCompletedTasks();
+  await hideCompletedTasks();
 
   expect.assertions(2);
 
-  expect(completedTask).toBeInTheDocument();
-  expect(pendingTask).toBeInTheDocument();
+  expect(screen.queryByText('Completed task')).not.toBeInTheDocument();
+  expect(screen.queryByText('Pending task')).toBeInTheDocument();
 });
 
 it("removes a task from the list when it's corresponding delete button is pressed", async () => {
-  const { elements, utils } = setupTest();
+  setupTest();
 
-  await utils.createTask('Deleted task');
-
-  const deleteTaskButton = screen.getByRole('button', {
-    name: /^delete$/i,
-  });
-
-  await utils.createTask('Pending task');
-  await act(async () => userEvent.click(elements.viewAllTasksButton));
-
-  const deletedTask = screen.getByText('Deleted task');
-  const pendingTask = screen.getByText('Pending task');
-
-  await act(async () => userEvent.click(deleteTaskButton));
+  await createTask('Pending task');
+  await createTask('Deleted task');
+  await deleteTask('Deleted task');
 
   expect.assertions(2);
 
-  expect(deletedTask).not.toBeInTheDocument();
-  expect(pendingTask).toBeInTheDocument();
+  expect(screen.queryByText('Deleted task')).not.toBeInTheDocument();
+  expect(screen.queryByText('Pending task')).toBeInTheDocument();
 });
 
 it("sets a completed task's status to pending when it's uncomplete button is pressed", async () => {
-  const { elements, utils } = setupTest();
+  setupTest();
 
-  await utils.createTask('Uncompleted task');
-
-  const completeTaskButton = screen.getByRole('button', {
-    name: /^complete$/i,
-  });
-
-  await act(async () => userEvent.click(completeTaskButton));
-  await act(async () => userEvent.click(elements.viewCompletedTasksButton));
-
-  const uncompleteTaskButton = screen.getByRole('button', {
-    name: /^uncomplete$/i,
-  });
-
-  let task = screen.getByText('Uncompleted task');
-
-  await act(async () => userEvent.click(uncompleteTaskButton));
+  await createTask('Uncompleted task');
+  await completeTask('Uncompleted task');
+  await showCompletedTasks();
+  await uncompleteTask('Uncompleted task');
 
   expect.assertions(2);
 
-  expect(task).not.toBeInTheDocument();
+  expect(screen.queryByText('Uncompleted task')).toBeInTheDocument();
 
-  await act(async () => userEvent.click(elements.viewPendingTasksButton));
+  await hideCompletedTasks();
 
-  task = screen.getByText('Uncompleted task');
-
-  expect(task).toBeInTheDocument();
+  expect(screen.queryByText('Uncompleted task')).toBeInTheDocument();
 });
