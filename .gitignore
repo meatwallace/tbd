@@ -20,3 +20,6 @@ build/
 
 # tooling
 .eslintcache
+
+# secrets & sensitive
+.env
