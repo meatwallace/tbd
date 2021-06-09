@@ -1,4 +1,8 @@
 build/
 coverage/
+public/
 .yarn/
 .pnp.js
+
+# `act` includes the following directories in our repository that we want to ignore
+_actions
