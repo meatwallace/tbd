@@ -8,7 +8,52 @@ const heading = {
 };
 
 export const theme: Theme = {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  // config
+  initialColorModeName: 'light',
+  useColorSchemeMediaQuery: true,
+
+  // styles
+  breakpoints: ['32em', '48em', '64em', '96em', '128em'],
+  colors: {
+    // brand
+    primary: '#2d248a',
+    accent: '#614ad3',
+    secondary: '#e42c64',
+
+    // greyscale
+    lightest: '#f1f3f8',
+    light: '#d6e0f0',
+    neutral: '#8d93ab',
+    dark: '#393b44',
+    darkest: '#161616',
+
+    // mixed colors
+    red: '#ec3750',
+    orange: '#ff8c37',
+    yellow: '#f1c40f',
+    green: '#33d6a6',
+    cyan: '#5bc0de',
+    blue: '#338eda',
+    purple: '#a633d6',
+
+    // ui component mapping
+    background: '#f9fafc',
+    text: '#161616',
+    placeholder: '#8d93ab',
+    sheet: '#f1f4f8',
+    border: '#d6e0f0',
+
+    // dark mode
+    modes: {
+      dark: {
+        backgrouund: '#161616',
+        text: '#f1f3f8',
+        placeholder: '#393b44',
+        sheet: '#0f0f0f',
+        border: '#1a1b21',
+      },
+    },
+  },
   fonts: {
     body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
@@ -24,13 +69,7 @@ export const theme: Theme = {
     body: 1.5,
     heading: 1.125,
   },
-  colors: {
-    text: '#000',
-    background: '#fff',
-    primary: '#07c',
-    secondary: '#30c',
-    muted: '#f6f6f6',
-  },
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   styles: {
     root: {
       fontFamily: 'body',
