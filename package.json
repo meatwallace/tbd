@@ -2,10 +2,6 @@
   "name": "@tbd/everything",
   "version": "1.0.0",
   "description": "monorepo containing all things tbd",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/meatwallace/tbd.git"
-  },
   "author": "Geoff Whatley <me@geoffwhatley.com>",
   "license": "MIT",
   "private": true,
@@ -13,7 +9,7 @@
     "apps/*",
     "packages/*",
     "services/*",
-    "styleguide",
+    "style-guide",
     "website"
   ],
   "scripts": {
@@ -21,6 +17,7 @@
     "build:api": "yarn workspace @tbd/api run build",
     "build:web": "yarn workspace @tbd/web run build",
     "start:api": "yarn workspace @tbd/api run start",
+    "start:styleguide": "yarn workspace @tbd/style-guide start",
     "start:web": "yarn workspace @tbd/web run start",
     "test": "jest",
     "lint": "eslint .",

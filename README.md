@@ -10,6 +10,7 @@ currently featuring:
   [workspaces](https://yarnpkg.com/features/workspaces) with
   [PnP](https://yarnpkg.com/features/pnp)
 - baby's-first-todo-app ... [create-react-app](https://create-react-app.dev)
+- style guide ... [theme-ui](https://theme-ui.com)
 - testing ... [jest](https://jestjs.io) ...
   [testing-library](https://testing-library.com) ... [msw](https://mswjs.io)
 - CI/CD ... [Github Actions](https://github.com/features/actions)
@@ -29,6 +30,7 @@ yarn
 
 # start projects in development mode
 yarn start:api
+yarn start:styleguide
 yarn start:web
 
 # build projects for production
@@ -38,6 +40,7 @@ yarn build:web
 
 ## inspiration & prior art
 
+- [hackclub's theme](https://theme.hackclub.com)
 - [thinkmill's monorepo guide](https://monorepo.guide) and their
   [starter](https://github.com/thinkmill/monorepo-starter)
 - [mono](https://meatwallace/mono) and other earlier monorepo WIPs of mine

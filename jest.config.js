@@ -3,6 +3,7 @@ module.exports = {
     '<rootDir>/apps/*/',
     // '<rootDir>/packages/*/',
     '<rootDir>/services/*/',
+    // '<rootDir>/style-guide',
     // '<rootDir>/website',
   ],
 };
