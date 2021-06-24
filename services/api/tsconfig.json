@@ -1,20 +1,16 @@
 {
-  "include": ["./src/**/*"],
+  "include": ["./src"],
   "exclude": ["./src/setupTests.js"],
   "compilerOptions": {
-    "outDir": "build",
-    "target": "esnext",
-    "module": "esnext",
-    "lib": ["esnext"],
+    "outDir": "dist",
+
+    "lib": ["ESNext"],
+    "module": "commonjs",
+    "target": "ES2020",
+
     "strict": true,
     "esModuleInterop": true,
-    "allowJs": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true
+    "forceConsistentCasingInFileNames": true
   }
 }

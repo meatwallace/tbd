@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button, Text } from 'theme-ui';
 import { ListItem } from './ListItem';
 import { useTasks } from '../hooks/useTasks';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { TasksFilterContext } from './TasksFilterContext';
 import { StatusFilter } from '../../types';
 

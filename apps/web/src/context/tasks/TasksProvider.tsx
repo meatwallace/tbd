@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { TasksContext } from './TasksContext';
 import { reducer } from './reducer';
 import { getInitialState } from './getInitialState';

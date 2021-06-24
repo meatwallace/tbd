@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Flex } from 'theme-ui';
 
 type Props = {

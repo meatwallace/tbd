@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button } from 'theme-ui';
 import { useTasks } from '../hooks/useTasks';
 import { exportAsJSON } from '../utils/exportAsJSON';

@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Button } from 'theme-ui';
 import useFileInput from 'use-file-input';
 import { useTasks } from '../hooks/useTasks';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { CreateTaskInput } from './CreateTaskInput';
 import { List } from './List';
 import { TaskListItem } from './TaskListItem';
