@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   BaseStyles,
   Badge,
@@ -20,8 +20,8 @@ import {
   Textarea,
 } from 'theme-ui';
 import invariant from 'tiny-invariant';
+import { theme } from '@tbd/theme';
 import { TypeScale, ColorPalette } from '@theme-ui/style-guide';
-import { theme } from '../theme';
 
 export function StyleGuide() {
   invariant(

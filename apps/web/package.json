@@ -10,6 +10,7 @@
     "start": "vite --host"
   },
   "dependencies": {
+    "@tbd/theme": "workspace:packages/theme",
     "@theme-ui/css": "0.8.4",
     "@types/file-saver": "2.0.2",
     "envalid": "7.1.0",

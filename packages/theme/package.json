@@ -1,0 +1,11 @@
+{
+  "name": "@tbd/theme",
+  "version": "1.0.0",
+  "description": "ui theme used across tbd projects",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {},
+  "dependencies": {
+    "@theme-ui/css": "0.8.4"
+  }
+}

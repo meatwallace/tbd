@@ -27,6 +27,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:apps/web"
       },
       {
+        "name": "@tbd/theme",
+        "reference": "workspace:packages/theme"
+      },
+      {
         "name": "@tbd/api",
         "reference": "workspace:services/api"
       },
@@ -41,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@tbd/api", ["workspace:services/api"]],
       ["@tbd/everything", ["workspace:."]],
       ["@tbd/style-guide", ["workspace:style-guide"]],
+      ["@tbd/theme", ["workspace:packages/theme"]],
       ["@tbd/web", ["workspace:apps/web"]]
     ],
     "fallbackPool": [
@@ -7694,6 +7699,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./style-guide/",
           "packageDependencies": [
             ["@tbd/style-guide", "workspace:style-guide"],
+            ["@tbd/theme", "workspace:packages/theme"],
             ["@testing-library/dom", "npm:7.31.0"],
             ["@testing-library/jest-dom", "npm:5.12.0"],
             ["@testing-library/react", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:11.2.7"],
@@ -7720,11 +7726,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT",
         }]
       ]],
+      ["@tbd/theme", [
+        ["workspace:packages/theme", {
+          "packageLocation": "./packages/theme/",
+          "packageDependencies": [
+            ["@tbd/theme", "workspace:packages/theme"],
+            ["@theme-ui/css", "npm:0.8.4"]
+          ],
+          "linkType": "SOFT",
+        }]
+      ]],
       ["@tbd/web", [
         ["workspace:apps/web", {
           "packageLocation": "./apps/web/",
           "packageDependencies": [
             ["@tbd/web", "workspace:apps/web"],
+            ["@tbd/theme", "workspace:packages/theme"],
             ["@testing-library/dom", "npm:7.31.0"],
             ["@testing-library/jest-dom", "npm:5.12.0"],
             ["@testing-library/react", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:11.2.7"],
@@ -20722,8 +20739,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["npm:2.6.1", {
           "packageLocation": "./.yarn/cache/node-fetch-npm-2.6.1-46c670dbc1-cbb171635e.zip/node_modules/node-fetch/",
           "packageDependencies": [
-            ["node-fetch", "npm:2.6.1"],
-            ["encoding", "npm:0.1.13"]
+            ["node-fetch", "npm:2.6.1"]
           ],
           "linkType": "HARD",
         }]

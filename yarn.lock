@@ -3677,6 +3677,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@tbd/style-guide@workspace:style-guide"
   dependencies:
+    "@tbd/theme": "workspace:packages/theme"
     "@testing-library/dom": 7.31.0
     "@testing-library/jest-dom": 5.12.0
     "@testing-library/react": 11.2.7
@@ -3702,10 +3703,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@tbd/theme@workspace:packages/theme":
+  version: 0.0.0-use.local
+  resolution: "@tbd/theme@workspace:packages/theme"
+  dependencies:
+    "@theme-ui/css": 0.8.4
+  languageName: unknown
+  linkType: soft
+
 "@tbd/web@workspace:apps/web":
   version: 0.0.0-use.local
   resolution: "@tbd/web@workspace:apps/web"
   dependencies:
+    "@tbd/theme": "workspace:packages/theme"
     "@testing-library/dom": 7.31.0
     "@testing-library/jest-dom": 5.12.0
     "@testing-library/react": 11.2.7
@@ -9010,7 +9020,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"encoding@npm:*, encoding@npm:^0.1.12":
+"encoding@npm:^0.1.12":
   version: 0.1.13
   resolution: "encoding@npm:0.1.13"
   dependencies:

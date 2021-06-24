@@ -10,6 +10,7 @@
     "start": "react-scripts start"
   },
   "dependencies": {
+    "@tbd/theme": "workspace:packages/theme",
     "@theme-ui/css": "0.8.4",
     "@theme-ui/style-guide": "0.9.1",
     "envalid": "7.1.0",

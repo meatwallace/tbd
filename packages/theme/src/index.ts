@@ -1,6 +1,6 @@
 import { Theme } from '@theme-ui/css';
 
-const colors = {
+export const colors = {
   // brand
   primary: '#2d248a',
   secondary: '#614ad3',
