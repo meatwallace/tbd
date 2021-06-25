@@ -54,7 +54,14 @@ export function TaskListItem(props: Props) {
         </Button>
       )}
 
-      <Text sx={styles.title}>{props.task.title}</Text>
+      <Text
+        sx={{
+          ...styles.title,
+          textDecoration: isTaskComplete(props.task) ? 'line-through' : 'none',
+        }}
+      >
+        {props.task.title}
+      </Text>
 
       <Button
         variant="icon"
