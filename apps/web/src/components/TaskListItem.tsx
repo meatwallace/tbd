@@ -1,4 +1,5 @@
-import { Button, Text } from 'theme-ui';
+import { Button, Text, ThemeUICSSObject } from 'theme-ui';
+import * as Icon from './Icon';
 import { ListItem } from './ListItem';
 import { useTasks } from '../hooks/useTasks';
 import { Task } from '../types';
@@ -7,10 +8,11 @@ import { isTaskPending } from '../utils/isTaskPending';
 
 type Props = { task: Task };
 
-const styles = {
+const styles: { [key: string]: ThemeUICSSObject } = {
   changeStatusButton: {
-    marginRight: 1,
+    color: 'neutral',
     flex: '0 0 auto',
+    marginRight: 1,
   },
   title: {
     flex: '1 1 auto',
@@ -19,6 +21,7 @@ const styles = {
     paddingTop: 2,
   },
   deleteButton: {
+    color: 'neutral',
     flex: '0 0 auto',
   },
 };
@@ -31,31 +34,35 @@ export function TaskListItem(props: Props) {
     <ListItem>
       {isTaskPending(props.task) && (
         <Button
+          variant="icon"
+          aria-label="complete"
           onClick={() => completeTask(props.task.id)}
-          variant="secondary"
           sx={styles.changeStatusButton}
         >
-          Complete
+          <Icon.CircleCheckboxBlank size={24} />
         </Button>
       )}
 
       {isTaskComplete(props.task) && (
         <Button
+          variant="icon"
+          aria-label="uncomplete"
           onClick={() => uncompleteTask(props.task.id)}
-          variant="secondary"
           sx={styles.changeStatusButton}
         >
-          Uncomplete
+          <Icon.CircleCheckboxChecked size={24} />
         </Button>
       )}
 
       <Text sx={styles.title}>{props.task.title}</Text>
 
       <Button
+        variant="icon"
+        aria-label="delete"
         onClick={() => deleteTask(props.task.id)}
         sx={styles.deleteButton}
       >
-        Delete
+        <Icon.DeleteBin size={24} />
       </Button>
     </ListItem>
   );

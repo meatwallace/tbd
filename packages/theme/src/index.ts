@@ -177,10 +177,10 @@ export const theme: Theme = {
       fontSize: 1,
       fontWeight: 'bold',
       justifyContent: 'center',
+      paddingBottom: 2,
       paddingLeft: 3,
       paddingRight: 3,
       paddingTop: 2,
-      paddingBottom: 2,
       WebkitTapHighlightColor: 'transparent',
     },
     secondary: {
@@ -190,6 +190,15 @@ export const theme: Theme = {
     callToAction: {
       variant: 'buttons.primary',
       backgroundColor: 'accent',
+    },
+    icon: {
+      variant: 'buttons.primary',
+      backgroundColor: 'transparent',
+      color: 'inherit',
+      paddingBottom: 1,
+      paddingLeft: 1,
+      paddingRight: 1,
+      paddingTop: 1,
     },
   },
   cards: {

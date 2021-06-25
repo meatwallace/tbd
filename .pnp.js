@@ -6048,6 +6048,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:17.0.2"],
             ["react-hook-form", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:7.5.2"],
+            ["react-icons", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:4.2.0"],
             ["setimmediate", "npm:1.0.5"],
             ["theme-ui", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:0.8.4"],
             ["tiny-invariant", "npm:1.1.0"],
@@ -16139,6 +16140,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/react-hook-form-virtual-053429909c/0/cache/react-hook-form-npm-7.5.2-896d858354-dec5e1f594.zip/node_modules/react-hook-form/",
           "packageDependencies": [
             ["react-hook-form", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:7.5.2"],
+            ["@types/react", "npm:17.0.0"],
+            ["react", "npm:17.0.2"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["react-icons", [
+        ["npm:4.2.0", {
+          "packageLocation": "./.yarn/cache/react-icons-npm-4.2.0-8be7673a1c-0052e25c6a.zip/node_modules/react-icons/",
+          "packageDependencies": [
+            ["react-icons", "npm:4.2.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:4.2.0", {
+          "packageLocation": "./.yarn/$$virtual/react-icons-virtual-7a5343c237/0/cache/react-icons-npm-4.2.0-8be7673a1c-0052e25c6a.zip/node_modules/react-icons/",
+          "packageDependencies": [
+            ["react-icons", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:4.2.0"],
             ["@types/react", "npm:17.0.0"],
             ["react", "npm:17.0.2"]
           ],
