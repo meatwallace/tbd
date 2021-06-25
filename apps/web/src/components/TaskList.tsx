@@ -2,6 +2,7 @@ import React from 'react';
 import { CreateTaskInput } from './CreateTaskInput';
 import { List } from './List';
 import { TaskListItem } from './TaskListItem';
+import { ToggleCompletedTasksFilterButton } from './ToggleCompletedTasksFilterButton';
 import { filterTasksByStatus } from './utils/filterTasksByStatus';
 import { useTasks } from '../hooks/useTasks';
 import { useTasksFilter } from '../hooks/useTasksFilter';
@@ -21,6 +22,7 @@ export function TaskList(props: Props) {
 
   return (
     <React.Fragment>
+      <ToggleCompletedTasksFilterButton />
       <CreateTaskInput />
       <List>
         {sortedTasks.map((task: Task) => (

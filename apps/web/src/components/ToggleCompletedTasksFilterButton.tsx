@@ -1,9 +1,9 @@
-import { Button } from 'theme-ui';
+import { Button, ThemeUICSSObject } from 'theme-ui';
 import { useTasksFilter } from '../hooks/useTasksFilter';
 import { StatusFilter } from '../types';
 
-const styles = {
-  container: {},
+const styles: ThemeUICSSObject = {
+  marginBottom: 2,
 };
 
 export function ToggleCompletedTasksFilterButton() {
@@ -24,7 +24,7 @@ export function ToggleCompletedTasksFilterButton() {
     : 'Show completed tasks';
 
   return (
-    <Button onClick={toggleCompletedTasks} sx={styles.container}>
+    <Button onClick={toggleCompletedTasks} sx={styles}>
       {buttonText}
     </Button>
   );

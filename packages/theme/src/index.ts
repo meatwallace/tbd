@@ -40,7 +40,7 @@ export const theme: Theme = {
     background: colors.white,
     border: colors.light,
     elevated: colors.lightest,
-    header: colors.lightest,
+    header: colors.accent,
     highlight: colors.light,
     muted: colors.light,
     placeholder: colors.neutral,

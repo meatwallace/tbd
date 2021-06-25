@@ -21,6 +21,7 @@
     "start:styleguide": "yarn workspace @tbd/style-guide start",
     "start:web": "yarn workspace @tbd/web run start",
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "lint": "eslint .",
     "postinstall": "husky install"
   },

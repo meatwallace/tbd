@@ -1,22 +1,22 @@
-import { Box } from 'theme-ui';
+import { Flex, ThemeUICSSObject } from 'theme-ui';
 
 type Props = {
   children: React.ReactNode;
 };
 
-const styles = {
-  container: {
-    paddingBottom: 2,
-    paddingLeft: 2,
-    paddingRight: 2,
-    paddingTop: 3,
-  },
+const styles: ThemeUICSSObject = {
+  alignItems: 'center',
+  backgroundColor: 'header',
+  flex: '1 0 auto',
+  height: '50px',
+  paddingLeft: 2,
+  paddingRight: 2,
 };
 
 export function Header(props: Props) {
   return (
-    <Box as="header" sx={styles.container}>
+    <Flex as="header" sx={styles}>
       {props.children}
-    </Box>
+    </Flex>
   );
 }
