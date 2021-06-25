@@ -30,11 +30,11 @@ export function StyleGuide() {
 
   return (
     <React.Fragment>
-      <Box as="header" sx={{ backgroundColor: 'header', color: 'text' }}>
+      <Box as="header" sx={{ backgroundColor: 'header', color: 'white' }}>
         <Container
           sx={{ paddingBottom: [3, 4], paddingTop: 5, textAlign: 'center' }}
         >
-          <Heading as="h1" variant="title" color="accent">
+          <Heading as="h1" variant="title" color="white">
             tbd theme
           </Heading>
           <Text as="p" variant="subtitle" mt={3}>

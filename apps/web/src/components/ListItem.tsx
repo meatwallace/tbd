@@ -7,7 +7,7 @@ type Props = {
 const styles: ThemeUICSSObject = {
   alignItems: 'center',
   borderBottom: '1px solid',
-  borderBottomColor: 'lightest',
+  borderBottomColor: 'border',
   paddingBottom: 1,
   paddingTop: 1,
 };

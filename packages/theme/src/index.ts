@@ -39,7 +39,7 @@ export const theme: Theme = {
     // ui component mapping
     background: colors.white,
     border: colors.light,
-    elevated: colors.lightest,
+    elevated: colors.white,
     header: colors.accent,
     highlight: colors.light,
     muted: colors.light,
@@ -50,12 +50,12 @@ export const theme: Theme = {
     modes: {
       dark: {
         background: colors.black,
-        border: colors.dark,
+        border: colors.darkest,
         elevated: colors.darkest,
         header: colors.darkest,
         highlight: colors.dark,
         muted: colors.dark,
-        placeholder: colors.darkest,
+        placeholder: colors.dark,
         text: colors.white,
       },
     },
@@ -219,9 +219,9 @@ export const theme: Theme = {
   },
   forms: {
     input: {
-      backgroundColor: 'white',
+      backgroundColor: 'elevated',
       border: '1px solid',
-      borderColor: 'light',
+      borderColor: 'border',
       borderRadius: 'default',
       color: 'text',
       fontFamily: 'body',
