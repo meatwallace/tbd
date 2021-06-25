@@ -9,7 +9,7 @@ const styles = {
     alignItems: 'flex-start',
     borderBottomWidth: 1,
     borderBottomStyle: 'solid',
-    borderBottomColor: 'muted',
+    borderBottomColor: 'lightest',
     paddingBottom: 1,
     paddingTop: 1,
   },

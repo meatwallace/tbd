@@ -66,7 +66,7 @@ export const theme: Theme = {
       'Rubik, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     monospace: '"SF Mono", "Roboto Mono", Menlo, Consolas, monospace',
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96, 128, 160, 192],
+  fontSizes: [10, 13, 16, 20, 25, 32, 40, 50, 62, 78, 97, 121, 151],
   fontWeights: {
     body: 400,
     heading: 600,
@@ -174,8 +174,13 @@ export const theme: Theme = {
       cursor: 'pointer',
       display: 'inline-flex',
       fontFamily: 'body',
+      fontSize: 1,
       fontWeight: 'bold',
       justifyContent: 'center',
+      paddingLeft: 3,
+      paddingRight: 3,
+      paddingTop: 2,
+      paddingBottom: 2,
       WebkitTapHighlightColor: 'transparent',
     },
     secondary: {
@@ -206,10 +211,12 @@ export const theme: Theme = {
   forms: {
     input: {
       backgroundColor: 'white',
-      border: 0,
+      border: '1px solid',
+      borderColor: 'light',
       borderRadius: 'default',
       color: 'text',
       fontFamily: 'body',
+      fontSize: 1,
       fontWeight: 'body',
       lineHeight: 'body',
       '::placeholder': { color: 'placeholder' },
@@ -260,6 +267,7 @@ export const theme: Theme = {
     root: {
       color: 'text',
       fontFamily: 'body',
+      fontSize: 1,
       fontWeight: 'body',
       lineHeight: 'body',
       margin: 0,
