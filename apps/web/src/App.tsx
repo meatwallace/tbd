@@ -1,6 +1,7 @@
 import { theme } from '@tbd/theme';
 import { ThemeProvider } from 'theme-ui';
 import { BrandLogo } from './components/BrandLogo';
+import { DarkModeToggle } from './components/DarkModeToggle';
 import { ExportButton } from './components/ExportButton';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
@@ -19,6 +20,7 @@ export function App() {
           <Layout>
             <Header>
               <BrandLogo />
+              <DarkModeToggle />
             </Header>
             <Main>
               <TaskList />
