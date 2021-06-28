@@ -78,8 +78,8 @@ export const theme: Theme = {
     body: 1.5,
   },
   sizes: {
-    layoutPlus: 1200,
-    layout: 1024,
+    layoutPlus: 1024,
+    layout: 768,
   },
   radii: {
     default: 4,
@@ -266,7 +266,7 @@ export const theme: Theme = {
     container: {
       marginLeft: 'auto',
       marginRight: 'auto',
-      maxWidth: ['layout', null, 'layoutPlus'],
+      maxWidth: [null, 'layout', null, 'layoutPlus'],
       paddingLeft: 3,
       paddingRight: 3,
       width: '100%',
