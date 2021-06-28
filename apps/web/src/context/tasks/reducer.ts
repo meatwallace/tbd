@@ -1,6 +1,7 @@
 import { completeTask } from './completeTask';
 import { createTask } from './createTask';
 import { deleteTask } from './deleteTask';
+import { reorderTask } from './reorderTask';
 import { uncompleteTask } from './uncompleteTask';
 import { Action, State, ActionType } from '../../types';
 
@@ -20,6 +21,10 @@ export function reducer(state: State, action: Action): State {
 
     case ActionType.Delete: {
       return deleteTask(state, action);
+    }
+
+    case ActionType.Reorder: {
+      return reorderTask(state, action);
     }
 
     case ActionType.Uncomplete: {

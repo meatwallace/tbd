@@ -1,11 +1,18 @@
 import { act, getByRole, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import invariant from 'tiny-invariant';
+import {
+  mockGetComputedSpacing,
+  mockDndElSpacing,
+  makeDnd,
+  DND_DRAGGABLE_DATA_ATTR,
+  DND_DIRECTION_UP,
+} from 'react-beautiful-dnd-test-utils';
 import { App } from './App';
 
 // --- SETUP & TEARDOWN
 function setupTest() {
-  render(<App />);
+  return render(<App />);
 }
 
 // --- UTILS
@@ -112,6 +119,36 @@ it('only shows pending tasks by default', async () => {
   expect(screen.queryByText('Completed task')).not.toBeInTheDocument();
 });
 
+it('reorders pending tasks when they are drag and dropped', async () => {
+  const reactTestingLibraryUtils = setupTest();
+
+  await createTask('Pending task #1');
+  await createTask('Pending task #2');
+  await createTask('Pending task #3');
+
+  // it's important we mock after we create our tasks - react testing library
+  // uses the mock APIs in it's `getByRole` function
+  mockDndElSpacing(reactTestingLibraryUtils);
+  mockGetComputedSpacing();
+
+  await makeDnd({
+    getByText: reactTestingLibraryUtils.getByText,
+    getDragEl: () =>
+      screen.getByText('Pending task #1').closest(DND_DRAGGABLE_DATA_ATTR),
+    direction: DND_DIRECTION_UP,
+    positions: 2,
+  });
+
+  const tasks = screen.getAllByText(/Pending task #[1-3]/);
+
+  /* expect.assertions(4); */
+
+  expect(tasks).toHaveLength(3);
+  expect(tasks[0]).toHaveTextContent('Pending task #1');
+  expect(tasks[1]).toHaveTextContent('Pending task #3');
+  expect(tasks[2]).toHaveTextContent('Pending task #2');
+});
+
 it("shows completed tasks when 'show completed tasks' is pressed", async () => {
   setupTest();
 
@@ -185,4 +222,64 @@ it("sets a completed task's status to pending when it's uncomplete button is pre
   await hideCompletedTasks();
 
   expect(screen.queryByText('Uncompleted task')).toBeInTheDocument();
+});
+
+it('lists completed tasks after pending tasks', async () => {
+  setupTest();
+
+  await createTask('Test task #1');
+  await createTask('Test task #2');
+  await createTask('Test task #3');
+  await completeTask('Test task #3');
+  await showCompletedTasks();
+
+  const tasks = screen.getAllByText(/Test task #[1-3]/);
+
+  expect.assertions(4);
+
+  expect(tasks).toHaveLength(3);
+  expect(tasks[0]).toHaveTextContent('Test task #2');
+  expect(tasks[1]).toHaveTextContent('Test task #1');
+  expect(tasks[2]).toHaveTextContent('Test task #3');
+});
+
+it('appends uncompleted tasks to the list of pending tasks', async () => {
+  setupTest();
+
+  await createTask('Test task #1');
+  await createTask('Test task #2');
+  await createTask('Test task #3');
+  await completeTask('Test task #3');
+  await completeTask('Test task #2');
+  await showCompletedTasks();
+  await uncompleteTask('Test task #3');
+
+  const tasks = screen.getAllByText(/Test task #[1-3]/);
+
+  expect.assertions(4);
+
+  expect(tasks).toHaveLength(3);
+  expect(tasks[0]).toHaveTextContent('Test task #1');
+  expect(tasks[1]).toHaveTextContent('Test task #3');
+  expect(tasks[2]).toHaveTextContent('Test task #2');
+});
+
+it('prepends completed tasks to the list of completed tasks', async () => {
+  setupTest();
+
+  await createTask('Test task #1');
+  await createTask('Test task #2');
+  await createTask('Test task #3');
+  await completeTask('Test task #3');
+  await completeTask('Test task #2');
+  await showCompletedTasks();
+
+  const tasks = screen.getAllByText(/Test task #[1-3]/);
+
+  expect.assertions(4);
+
+  expect(tasks).toHaveLength(3);
+  expect(tasks[0]).toHaveTextContent('Test task #1');
+  expect(tasks[1]).toHaveTextContent('Test task #2');
+  expect(tasks[2]).toHaveTextContent('Test task #3');
 });

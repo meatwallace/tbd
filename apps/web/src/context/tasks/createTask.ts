@@ -11,7 +11,8 @@ export function createTask(state: State, action: CreateAction): State {
   };
 
   return {
-    ids: [...state.ids, task.id],
+    ...state,
+    pendingIDs: [task.id, ...state.pendingIDs],
     items: { ...state.items, [task.id]: task },
   };
 }

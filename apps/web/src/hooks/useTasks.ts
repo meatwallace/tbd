@@ -1,7 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import invariant from 'tiny-invariant';
 import { TasksContext } from '../context/tasks';
-import { getTasksFromState } from './utils/getTasksFromState';
+import { getPendingTasksFromState } from './utils/getPendingTasksFromState';
+import { getCompletedTasksFromState } from './utils/getCompletedTasksFromState';
 import { ActionType, State } from '../types';
 
 export function useTasks() {
@@ -23,18 +24,31 @@ export function useTasks() {
   const importState = (state: State) =>
     dispatch({ type: ActionType.Import, payload: state });
 
+  const reorderTask = (
+    taskID: string,
+    sourceIndex: number,
+    destinationIndex: number,
+  ) =>
+    dispatch({
+      type: ActionType.Reorder,
+      payload: { taskID, sourceIndex, destinationIndex },
+    });
+
   const uncompleteTask = (taskID: string) =>
     dispatch({ type: ActionType.Uncomplete, payload: { taskID } });
 
-  const tasks = getTasksFromState(state);
+  const pendingTasks = getPendingTasksFromState(state);
+  const completedTasks = getCompletedTasksFromState(state);
 
   return {
     state,
-    tasks,
+    pendingTasks,
+    completedTasks,
     completeTask,
     createTask,
     deleteTask,
     importState,
+    reorderTask,
     uncompleteTask,
   };
 }

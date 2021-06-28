@@ -42,7 +42,7 @@ export const theme: Theme = {
     elevated: colors.white,
     header: colors.accent,
     highlight: colors.light,
-    muted: colors.light,
+    muted: colors.lightest,
     placeholder: colors.neutral,
     text: colors.black,
 
@@ -53,7 +53,7 @@ export const theme: Theme = {
         border: colors.darkest,
         elevated: colors.darkest,
         header: colors.darkest,
-        highlight: colors.dark,
+        highlight: colors.darkest,
         muted: colors.dark,
         placeholder: colors.dark,
         text: colors.white,

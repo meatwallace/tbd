@@ -1,8 +1,9 @@
 import { State } from '../../types';
 
 export const INITIAL_STATE: State = {
-  ids: [],
+  pendingIDs: [],
+  completedIDs: [],
   items: {},
 };
 
-export const TASKS_STATE_KEY = 'wemeetagain#state#tasks';
+export const TASKS_STATE_KEY = 'tbd#state#tasks';

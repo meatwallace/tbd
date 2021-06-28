@@ -1,10 +1,16 @@
 import { DeleteAction, State } from '../../types';
 
 export function deleteTask(state: State, action: DeleteAction): State {
-  const ids = state.ids.filter((id) => id !== action.payload.taskID);
   const items = { ...state.items };
 
   delete items[action.payload.taskID];
 
-  return { ids, items };
+  return {
+    ...state,
+    pendingIDs: state.pendingIDs.filter((id) => id !== action.payload.taskID),
+    completedIDs: state.completedIDs.filter(
+      (id) => id !== action.payload.taskID,
+    ),
+    items,
+  };
 }

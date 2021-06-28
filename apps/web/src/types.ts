@@ -1,3 +1,7 @@
+export enum DroppableID {
+  TaskList = 'TASK_LIST',
+}
+
 export enum TaskStatus {
   Completed = 'COMPLETED',
   Pending = 'PENDING',
@@ -8,6 +12,7 @@ export enum ActionType {
   Create = 'CREATE',
   Delete = 'DELETE',
   Import = ' IMPORT',
+  Reorder = 'REORDER',
   Uncomplete = 'UNCOMPLETE',
 }
 
@@ -33,6 +38,15 @@ export type ImportAction = {
   payload: State;
 };
 
+export type ReorderAction = {
+  type: ActionType.Reorder;
+  payload: {
+    taskID: string;
+    sourceIndex: number;
+    destinationIndex: number;
+  };
+};
+
 export type UncompleteAction = {
   type: ActionType.Uncomplete;
   payload: { taskID: string };
@@ -43,12 +57,14 @@ export type Action =
   | CreateAction
   | DeleteAction
   | ImportAction
+  | ReorderAction
   | UncompleteAction;
 
 export type Dispatch = (action: Action) => void;
 
 export type State = {
-  ids: Array<string>;
+  pendingIDs: Array<string>;
+  completedIDs: Array<string>;
   items: { [id: string]: Task };
 };
 
@@ -62,6 +78,5 @@ export type Task = {
 
 export enum StatusFilter {
   All,
-  Completed,
   Pending,
 }

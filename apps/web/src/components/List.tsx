@@ -1,17 +1,15 @@
-import { Box } from 'theme-ui';
+import React from 'react';
+import { Box, ThemeUICSSObject } from 'theme-ui';
 
 type Props = {
   children: React.ReactNode;
+  sx?: ThemeUICSSObject;
 };
 
-const styles = {
-  container: {},
-};
+const styles: ThemeUICSSObject = {};
 
-export function List(props: Props) {
-  return (
-    <Box as="ul" sx={styles.container}>
-      {props.children}
-    </Box>
-  );
-}
+export const List = React.forwardRef<HTMLDivElement, Props>((props, ref) => (
+  <Box {...props} ref={ref} as="ul" sx={{ ...styles, ...props.sx }}>
+    {props.children}
+  </Box>
+));

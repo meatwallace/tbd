@@ -5,4 +5,5 @@ module.exports = {
   },
   testEnvironment: 'node',
   setupFilesAfterEnv: ['./src/setupTests.js'],
+  restoreMocks: true,
 };

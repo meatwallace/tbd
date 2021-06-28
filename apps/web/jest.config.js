@@ -6,4 +6,5 @@ module.exports = {
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['./src/setupTests.js'],
   transformIgnorePatterns: ['/node_modules/(?!(use-file-input)/)'],
+  restoreMocks: true,
 };

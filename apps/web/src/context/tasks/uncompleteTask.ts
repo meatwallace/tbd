@@ -1,9 +1,11 @@
 import { State, TaskStatus, UncompleteAction } from '../../types';
 
 export function uncompleteTask(state: State, action: UncompleteAction): State {
-  // TODO: tidy up
   return {
-    ids: state.ids,
+    completedIDs: state.completedIDs.filter(
+      (id) => id !== action.payload.taskID,
+    ),
+    pendingIDs: [...state.pendingIDs, action.payload.taskID],
     items: {
       ...state.items,
       [action.payload.taskID]: {

@@ -3,7 +3,8 @@
     // no idea how this scales. we may have to do project specific type checking
     // in the (near?) future
     "./apps/web/src",
-    "./services/api/src"
+    "./services/api/src",
+    "./types"
   ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
