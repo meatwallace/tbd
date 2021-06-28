@@ -141,7 +141,7 @@ it('reorders pending tasks when they are drag and dropped', async () => {
 
   const tasks = screen.getAllByText(/Pending task #[1-3]/);
 
-  /* expect.assertions(4); */
+  expect.assertions(4);
 
   expect(tasks).toHaveLength(3);
   expect(tasks[0]).toHaveTextContent('Pending task #1');

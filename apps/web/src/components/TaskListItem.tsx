@@ -8,6 +8,7 @@ import { isTaskComplete } from '../utils/isTaskComplete';
 import { isTaskPending } from '../utils/isTaskPending';
 
 type Props = {
+  children?: React.ReactNode;
   task: Task;
   sx?: ThemeUICSSObject;
 };
@@ -36,6 +37,8 @@ export const TaskListItem = React.forwardRef<HTMLDivElement, Props>(
 
     return (
       <ListItem {...props} ref={ref}>
+        {props.children}
+
         {isTaskPending(props.task) && (
           <Button
             variant="icon"

@@ -13,6 +13,7 @@ const styles: ThemeUICSSObject = {
   borderBottomColor: 'border',
   paddingBottom: 1,
   paddingTop: 1,
+  position: 'relative',
 };
 
 export const ListItem = React.forwardRef<HTMLDivElement, Props>(

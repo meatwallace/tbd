@@ -1,5 +1,9 @@
+import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import { ThemeUICSSObject } from 'theme-ui';
 import { Task } from '../types';
+import { isMobile } from '../utils/isMobile';
+import { DragHandle } from './DragHandle';
 import { TaskListItem } from './TaskListItem';
 
 type Props = {
@@ -7,24 +11,37 @@ type Props = {
   task: Task;
 };
 
-export function DraggableTaskListItem(props: Props) {
-  // TODO: review performance implication of including the hook in every list item
+const styles: { [key: string]: ThemeUICSSObject } = {
+  dragHandle: {
+    left: '-24px',
+    opacity: isMobile() ? 0.5 : 0,
+    position: 'absolute',
+    transition: 'opacity 150ms ease-in-out',
+  },
+};
 
+export function DraggableTaskListItem(props: Props) {
   return (
     <Draggable draggableId={props.task.id} index={props.index}>
       {(provided, snapshot) => (
-        <TaskListItem
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          sx={{
-            transition: 'background-color 0.5s ease-out',
-            backgroundColor: snapshot.isDragging ? 'muted' : 'background',
-            borderColor: snapshot.isDragging ? 'muted' : 'border',
-            opacity: snapshot.isDragging ? 0.8 : 1,
-          }}
-          ref={provided.innerRef}
-          task={props.task}
-        />
+        <React.Fragment>
+          <TaskListItem
+            {...provided.draggableProps}
+            sx={{
+              transition: 'background-color 0.5s ease-out',
+              backgroundColor: snapshot.isDragging ? 'muted' : 'background',
+              borderColor: snapshot.isDragging ? 'muted' : 'border',
+              opacity: snapshot.isDragging ? 0.8 : 1,
+              '&:hover > div': {
+                opacity: 1,
+              },
+            }}
+            ref={provided.innerRef}
+            task={props.task}
+          >
+            <DragHandle {...provided.dragHandleProps} sx={styles.dragHandle} />
+          </TaskListItem>
+        </React.Fragment>
       )}
     </Draggable>
   );

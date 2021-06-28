@@ -3253,6 +3253,7 @@ __metadata:
     "@vitejs/plugin-react-refresh": 1.3.3
     envalid: 7.1.0
     file-saver: 2.0.5
+    is-mobile: 3.0.0
     jest-extended: 0.11.5
     local-storage: 2.0.0
     minireset.css: 0.0.7
@@ -3260,7 +3261,7 @@ __metadata:
     nanoid: 3.1.23
     react: 17.0.2
     react-beautiful-dnd: 13.1.0
-    react-beautiful-dnd-test-utils: 3.2.1
+    react-beautiful-dnd-test-utils: meatwallace/react-beautiful-dnd-test-utils
     react-dom: 17.0.2
     react-hook-form: 7.5.2
     react-icons: 4.2.0
@@ -8755,6 +8756,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-mobile@npm:3.0.0":
+  version: 3.0.0
+  resolution: "is-mobile@npm:3.0.0"
+  checksum: bfa006bdf14551642d71dc87bccd0683b0361fcdb027bd3cdf53bbe383cabad7b5c7262a7e1575df2ac46c86d66158af78547d92b51845592770ca1e78e14304
+  languageName: node
+  linkType: hard
+
 "is-negative-zero@npm:^2.0.1":
   version: 2.0.1
   resolution: "is-negative-zero@npm:2.0.1"
@@ -11682,14 +11690,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-beautiful-dnd-test-utils@npm:3.2.1":
+react-beautiful-dnd-test-utils@meatwallace/react-beautiful-dnd-test-utils:
   version: 3.2.1
-  resolution: "react-beautiful-dnd-test-utils@npm:3.2.1"
+  resolution: "react-beautiful-dnd-test-utils@https://github.com/meatwallace/react-beautiful-dnd-test-utils.git#commit=12b25390ec4bc03fc45d07730020aa8fb086b40b"
   peerDependencies:
     "@testing-library/jest-dom": ^4.0.0
     "@testing-library/react": ^8.0.1
     jest: ^24.0.0
-  checksum: 0656c2b7ad8f0f2ba3dce0ded81bd3dcd3ad627fd9fbe6777ed4fa98bd49c9219f74d2f9e9886a1b064ae99b4f1c3e12094ac7390e3d657461a88bbbb533a49a
+  checksum: 5d760f0baa59f84ad77078cfde7ad1a38855f9ec7b69374e9ae3a50125fb78b0b6587049096ba724d3d3c0506bdf56234069ea0b44d5b30ae4a6ffc1db42c12e
   languageName: node
   linkType: hard
 

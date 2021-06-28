@@ -6041,6 +6041,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-react-refresh", "npm:1.3.3"],
             ["envalid", "npm:7.1.0"],
             ["file-saver", "npm:2.0.5"],
+            ["is-mobile", "npm:3.0.0"],
             ["jest-extended", "npm:0.11.5"],
             ["local-storage", "npm:2.0.0"],
             ["minireset.css", "npm:0.0.7"],
@@ -6048,7 +6049,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nanoid", "npm:3.1.23"],
             ["react", "npm:17.0.2"],
             ["react-beautiful-dnd", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:13.1.0"],
-            ["react-beautiful-dnd-test-utils", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:3.2.1"],
+            ["react-beautiful-dnd-test-utils", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#https://github.com/meatwallace/react-beautiful-dnd-test-utils.git#commit=12b25390ec4bc03fc45d07730020aa8fb086b40b"],
             ["react-dom", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:17.0.2"],
             ["react-hook-form", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:7.5.2"],
             ["react-icons", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:4.2.0"],
@@ -12858,6 +12859,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["is-mobile", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/is-mobile-npm-3.0.0-9b0fe36c49-bfa006bdf1.zip/node_modules/is-mobile/",
+          "packageDependencies": [
+            ["is-mobile", "npm:3.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["is-negative-zero", [
         ["npm:2.0.1", {
           "packageLocation": "./.yarn/cache/is-negative-zero-npm-2.0.1-d8f3dbcfe1-e2160af9a6.zip/node_modules/is-negative-zero/",
@@ -16163,17 +16173,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["react-beautiful-dnd-test-utils", [
-        ["npm:3.2.1", {
-          "packageLocation": "./.yarn/cache/react-beautiful-dnd-test-utils-npm-3.2.1-54e29aebcb-0656c2b7ad.zip/node_modules/react-beautiful-dnd-test-utils/",
+        ["https://github.com/meatwallace/react-beautiful-dnd-test-utils.git#commit=12b25390ec4bc03fc45d07730020aa8fb086b40b", {
+          "packageLocation": "./.yarn/cache/react-beautiful-dnd-test-utils-https-75a04a6cd7-5d760f0baa.zip/node_modules/react-beautiful-dnd-test-utils/",
           "packageDependencies": [
-            ["react-beautiful-dnd-test-utils", "npm:3.2.1"]
+            ["react-beautiful-dnd-test-utils", "https://github.com/meatwallace/react-beautiful-dnd-test-utils.git#commit=12b25390ec4bc03fc45d07730020aa8fb086b40b"]
           ],
           "linkType": "SOFT",
         }],
-        ["virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:3.2.1", {
-          "packageLocation": "./.yarn/$$virtual/react-beautiful-dnd-test-utils-virtual-12d49431dd/0/cache/react-beautiful-dnd-test-utils-npm-3.2.1-54e29aebcb-0656c2b7ad.zip/node_modules/react-beautiful-dnd-test-utils/",
+        ["virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#https://github.com/meatwallace/react-beautiful-dnd-test-utils.git#commit=12b25390ec4bc03fc45d07730020aa8fb086b40b", {
+          "packageLocation": "./.yarn/$$virtual/react-beautiful-dnd-test-utils-virtual-dcdf85c10d/0/cache/react-beautiful-dnd-test-utils-https-75a04a6cd7-5d760f0baa.zip/node_modules/react-beautiful-dnd-test-utils/",
           "packageDependencies": [
-            ["react-beautiful-dnd-test-utils", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:3.2.1"],
+            ["react-beautiful-dnd-test-utils", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#https://github.com/meatwallace/react-beautiful-dnd-test-utils.git#commit=12b25390ec4bc03fc45d07730020aa8fb086b40b"],
             ["@testing-library/jest-dom", "npm:5.12.0"],
             ["@testing-library/react", "virtual:1d10b04bfe093c2f82c2ef2728db324bfe7dd54c30930baef977fea3c457d5a292257ca924e487abbbb57819608d9a15bf3267917802cf5d64eede8426b40b24#npm:11.2.7"],
             ["@types/jest", "npm:26.0.23"],
