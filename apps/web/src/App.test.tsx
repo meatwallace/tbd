@@ -57,8 +57,14 @@ async function deleteTask(title: string) {
 
   invariant(task);
 
+  const showMenuButton = getByRole(task, 'button', {
+    name: /^show task menu$/i,
+  });
+
+  await act(async () => userEvent.click(showMenuButton));
+
   const deleteButton = getByRole(task, 'button', {
-    name: /^delete/i,
+    name: /^delete task$/i,
   });
 
   await act(async () => userEvent.click(deleteButton));

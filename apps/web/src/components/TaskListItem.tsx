@@ -2,10 +2,15 @@ import React from 'react';
 import { Button, Text, ThemeUICSSObject } from 'theme-ui';
 import * as Icon from './Icon';
 import { ListItem } from './ListItem';
+import { Menu } from './Menu/Menu';
+import { MenuItems } from './Menu/MenuItems';
+import { MenuItem } from './Menu/MenuItem';
+import { MenuButton } from './Menu/MenuButton';
 import { useTasks } from '../hooks/useTasks';
 import { Task } from '../types';
 import { isTaskComplete } from '../utils/isTaskComplete';
 import { isTaskPending } from '../utils/isTaskPending';
+import { isMobile } from '../utils/isMobile';
 
 type Props = {
   children?: React.ReactNode;
@@ -14,6 +19,11 @@ type Props = {
 };
 
 const styles: { [key: string]: ThemeUICSSObject } = {
+  listItem: {
+    '&:hover > div, &:hover > div > button': {
+      opacity: 1,
+    },
+  },
   changeStatusButton: {
     color: 'neutral',
     flex: '0 0 auto',
@@ -25,9 +35,9 @@ const styles: { [key: string]: ThemeUICSSObject } = {
     paddingBottom: 2,
     paddingTop: 2,
   },
-  deleteButton: {
-    color: 'neutral',
-    flex: '0 0 auto',
+  contextMenu: {
+    position: 'absolute',
+    right: '-24px',
   },
 };
 
@@ -36,7 +46,7 @@ export const TaskListItem = React.forwardRef<HTMLDivElement, Props>(
     const { completeTask, deleteTask, uncompleteTask } = useTasks();
 
     return (
-      <ListItem {...props} ref={ref}>
+      <ListItem {...props} ref={ref} sx={{ ...styles.listItem, ...props.sx }}>
         {props.children}
 
         {isTaskPending(props.task) && (
@@ -64,6 +74,7 @@ export const TaskListItem = React.forwardRef<HTMLDivElement, Props>(
         <Text
           sx={{
             ...styles.title,
+            opacity: isTaskComplete(props.task) ? 0.5 : 1,
             textDecoration: isTaskComplete(props.task)
               ? 'line-through'
               : 'none',
@@ -72,14 +83,20 @@ export const TaskListItem = React.forwardRef<HTMLDivElement, Props>(
           {props.task.title}
         </Text>
 
-        <Button
-          variant="icon"
-          aria-label="delete"
-          onClick={() => deleteTask(props.task.id)}
-          sx={styles.deleteButton}
-        >
-          <Icon.DeleteBin size={24} />
-        </Button>
+        <Menu sx={styles.contextMenu}>
+          <MenuButton
+            aria-label="show task menu"
+            sx={{ opacity: isMobile() ? 0.5 : 0 }}
+          >
+            <Icon.PopoutMenu size={20} />
+          </MenuButton>
+          <MenuItems>
+            <MenuItem onClick={() => deleteTask(props.task.id)}>
+              <Icon.DeleteBin size={20} />
+              <Text sx={{ marginLeft: 3 }}>Delete task</Text>
+            </MenuItem>
+          </MenuItems>
+        </Menu>
       </ListItem>
     );
   },

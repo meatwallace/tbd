@@ -27,16 +27,13 @@ export function DraggableTaskListItem(props: Props) {
         <React.Fragment>
           <TaskListItem
             {...provided.draggableProps}
+            ref={provided.innerRef}
             sx={{
               transition: 'background-color 0.5s ease-out',
               backgroundColor: snapshot.isDragging ? 'muted' : 'background',
               borderColor: snapshot.isDragging ? 'muted' : 'border',
               opacity: snapshot.isDragging ? 0.8 : 1,
-              '&:hover > div': {
-                opacity: 1,
-              },
             }}
-            ref={provided.innerRef}
             task={props.task}
           >
             <DragHandle {...provided.dragHandleProps} sx={styles.dragHandle} />

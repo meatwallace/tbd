@@ -7,11 +7,14 @@ type Props = {
 };
 
 const styles: ThemeUICSSObject = {
-  backgroundColor: 'background',
   alignItems: 'center',
+  backgroundColor: 'background',
   borderBottom: '1px solid',
   borderBottomColor: 'border',
+  overflow: 'visible',
   paddingBottom: 1,
+  paddingLeft: 1,
+  paddingRight: 1,
   paddingTop: 1,
   position: 'relative',
 };

@@ -10,8 +10,8 @@ export const colors = {
   white: '#f9fafc',
   lightest: '#f1f3f8',
   light: '#d6e0f0',
-  neutral: '#8d93ab',
-  dark: '#393b44',
+  neutral: '#6d6f77',
+  dark: '#232425',
   darkest: '#161616',
   black: '#0a0a0a',
 
@@ -39,9 +39,9 @@ export const theme: Theme = {
     // ui component mapping
     background: colors.white,
     border: colors.light,
-    elevated: colors.lightest,
+    elevated: colors.white,
     header: colors.accent,
-    highlight: colors.light,
+    highlight: colors.lightest,
     muted: colors.lightest,
     placeholder: colors.neutral,
     text: colors.black,
@@ -50,12 +50,12 @@ export const theme: Theme = {
     modes: {
       dark: {
         background: colors.black,
-        border: colors.darkest,
+        border: colors.dark,
         elevated: colors.darkest,
         header: colors.darkest,
         highlight: colors.darkest,
         muted: colors.dark,
-        placeholder: colors.dark,
+        placeholder: colors.neutral,
         text: colors.white,
       },
     },
@@ -86,6 +86,7 @@ export const theme: Theme = {
   },
   shadows: {
     card: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    popover: '0 4px 8px rgba(0, 0, 0, 0.4)',
   },
   text: {
     heading: {
@@ -195,10 +196,10 @@ export const theme: Theme = {
       variant: 'buttons.primary',
       backgroundColor: 'transparent',
       color: 'inherit',
-      paddingBottom: 1,
-      paddingLeft: 1,
-      paddingRight: 1,
-      paddingTop: 1,
+      paddingBottom: 2,
+      paddingLeft: 2,
+      paddingRight: 2,
+      paddingTop: 2,
     },
   },
   cards: {
