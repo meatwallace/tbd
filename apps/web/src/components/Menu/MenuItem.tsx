@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex, ThemeUICSSObject } from 'theme-ui';
+import { useMenu } from './useMenu';
 
 type Props = {
   children: React.ReactNode;
@@ -20,8 +21,19 @@ const styles: ThemeUICSSObject = {
 };
 
 export function MenuItem(props: Props) {
+  const { toggle } = useMenu();
+
   return (
-    <Flex {...props} as="li" role="button" sx={styles}>
+    <Flex
+      {...props}
+      as="li"
+      role="button"
+      sx={styles}
+      onClick={(e) => {
+        toggle();
+        props.onClick(e);
+      }}
+    >
       {props.children}
     </Flex>
   );

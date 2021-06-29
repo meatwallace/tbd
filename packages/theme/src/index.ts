@@ -220,7 +220,7 @@ export const theme: Theme = {
   },
   forms: {
     input: {
-      backgroundColor: 'elevated',
+      backgroundColor: 'background',
       border: '1px solid',
       borderColor: 'border',
       borderRadius: 'default',

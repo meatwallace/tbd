@@ -5,6 +5,7 @@ import { useOnOutsideClick } from './useOnOutsideClick';
 
 type Props = {
   children: React.ReactNode;
+  sx?: ThemeUICSSObject;
 };
 
 const styles: ThemeUICSSObject = {
@@ -17,8 +18,6 @@ const styles: ThemeUICSSObject = {
   paddingBottom: 2,
   paddingTop: 2,
   position: 'absolute',
-  right: '32px',
-  top: '-10px',
   zIndex: 1,
 };
 
@@ -33,7 +32,11 @@ export function MenuItems(props: Props) {
       {...props}
       as="ul"
       ref={menuRef}
-      sx={{ ...styles, display: isOpen ? 'block' : 'none' }}
+      sx={{
+        ...styles,
+        ...props.sx,
+        display: isOpen ? 'block' : 'none',
+      }}
     >
       {props.children}
     </Box>

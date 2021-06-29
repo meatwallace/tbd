@@ -5,7 +5,9 @@ type Props = {
 };
 
 const styles: ThemeUICSSObject = {
+  display: 'flex',
   flex: '1 1 100%',
+  flexFlow: 'column',
   paddingBottom: 3,
   paddingTop: 3,
 };

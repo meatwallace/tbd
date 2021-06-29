@@ -70,7 +70,17 @@ async function deleteTask(title: string) {
   await act(async () => userEvent.click(deleteButton));
 }
 
+async function showTaskListMenu() {
+  const showMenuButton = screen.getByRole('button', {
+    name: /^show task list menu$/i,
+  });
+
+  await act(async () => userEvent.click(showMenuButton));
+}
+
 async function showCompletedTasks() {
+  await showTaskListMenu();
+
   const showCompletedTasksButton = screen.getByRole('button', {
     name: /^show completed tasks$/i,
   });
@@ -79,6 +89,8 @@ async function showCompletedTasks() {
 }
 
 async function hideCompletedTasks() {
+  await showTaskListMenu();
+
   const hideCompletedTasksButton = screen.getByRole('button', {
     name: /^hide completed tasks$/i,
   });
@@ -173,6 +185,7 @@ it("replaces the 'show completed tasks' button with a 'hide completed tasks' but
   setupTest();
 
   await showCompletedTasks();
+  await showTaskListMenu();
 
   expect.assertions(2);
 

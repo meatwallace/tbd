@@ -7,11 +7,20 @@ type Props = {
   sx?: ThemeUICSSObject;
 };
 
+const styles: ThemeUICSSObject = {
+  padding: 0,
+};
+
 export function MenuButton(props: Props) {
   const { toggle } = useMenu();
 
   return (
-    <Button {...props} variant="icon" sx={{ ...props.sx }} onClick={toggle}>
+    <Button
+      {...props}
+      variant="icon"
+      sx={{ ...styles, ...props.sx }}
+      onClick={toggle}
+    >
       {props.children}
     </Button>
   );

@@ -35,9 +35,13 @@ const styles: { [key: string]: ThemeUICSSObject } = {
     paddingBottom: 2,
     paddingTop: 2,
   },
-  contextMenu: {
+  contextMenuButton: {
     position: 'absolute',
     right: '-24px',
+  },
+  contextMenu: {
+    right: '24px',
+    top: '0',
   },
 };
 
@@ -83,14 +87,14 @@ export const TaskListItem = React.forwardRef<HTMLDivElement, Props>(
           {props.task.title}
         </Text>
 
-        <Menu sx={styles.contextMenu}>
+        <Menu sx={styles.contextMenuButton}>
           <MenuButton
             aria-label="show task menu"
             sx={{ opacity: isMobile() ? 0.5 : 0 }}
           >
             <Icon.PopoutMenu size={20} />
           </MenuButton>
-          <MenuItems>
+          <MenuItems sx={styles.contextMenu}>
             <MenuItem onClick={() => deleteTask(props.task.id)}>
               <Icon.DeleteBin size={20} />
               <Text sx={{ marginLeft: 3 }}>Delete task</Text>
